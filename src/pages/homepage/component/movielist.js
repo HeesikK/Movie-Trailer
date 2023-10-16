@@ -16,7 +16,7 @@ const MovieList = () => {
         {movieList &&
           movieList.map((movie) => (
             <Grid item xs={3}>
-              <MovieBox title={movie.title} id={movie.id} poster={movie.poster_path} />
+              <MovieBox title={movie.title} overview={movie.overview} id={movie.id} poster={movie.poster_path} />
             </Grid>
           ))}
       </Grid>

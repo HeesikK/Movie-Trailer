@@ -39,7 +39,9 @@ const Navbar = styled.div`
 
 const FilterList = styled.ul`
   ${flexCenter}
+
   > li {
+    color: white;
     padding: 15px;
     cursor: pointer;
     &:hover {
