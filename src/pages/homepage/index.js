@@ -1,11 +1,13 @@
-import { useEffect } from "react";
-import { getMovieList } from "../../apis/api";
+import Carousel from "./component/carousel";
+import MovieList from "./component/movielist";
 
 const HomePage = () => {
-  useEffect(() => {
-    getMovieList();
-  }, []);
-  return <div>홈페이지</div>;
+  return (
+    <>
+      <Carousel />
+      <MovieList />
+    </>
+  );
 };
 
 export default HomePage;
