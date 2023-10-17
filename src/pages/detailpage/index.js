@@ -1,10 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
-import { getDetailMovie, getMovieReview, getMovieVideo } from "../../apis/api";
+import { getDetailMovie, getMovieVideo } from "../../apis/api";
 import YouTube from "react-youtube";
 import { flexAlignCenter, flexCenter } from "../../styles/common.style";
 import styled from "styled-components";
 import Review from "./components/review";
+import SimilarMovie from "./components/similar";
 
 const DetailPage = () => {
   const { id } = useParams();
@@ -28,6 +29,7 @@ const DetailPage = () => {
         <S.OverViewContent>{detailMovie && detailMovie.overview}</S.OverViewContent>
       </S.OverView>
       <Review id={id} />
+      <SimilarMovie id={id} />
     </S.Wrapper>
   );
 };

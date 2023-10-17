@@ -19,3 +19,8 @@ export const getMovieReview = async (id) => {
   const res = await axiosInstance.get(`/movie/${id}/reviews`);
   return res.data;
 };
+
+export const getSimilarMove = async (id) => {
+  const res = await axiosInstance.get(`/movie/${id}/similar`);
+  return res.data;
+};

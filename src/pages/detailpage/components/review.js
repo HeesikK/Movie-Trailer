@@ -7,7 +7,7 @@ const Review = ({ id }) => {
 
   const reviews = movieReview && movieReview.results;
 
-  console.log(reviews);
+  console.log("리뷰: ", reviews);
 
   return (
     <>
@@ -30,7 +30,7 @@ export default Review;
 const ReviewTitle = styled.div`
   font-size: 28px;
   color: white;
-  padding: 50px 0 30px 0;
+  padding: 50px 0 50px 0;
 `;
 
 const ReviewContainer = styled.div`
@@ -45,6 +45,7 @@ const ReviewAuthor = styled.div`
   padding-bottom: 20px;
   color: white;
   font-size: 20px;
+  font-weight: bold;
 `;
 
 const ReviewContent = styled.div`
