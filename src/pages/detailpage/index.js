@@ -64,6 +64,7 @@ const MovieTitle = styled.div`
 const MovieRate = styled.div`
   font-size: 24px;
   color: white;
+  font-weight: bold;
 `;
 
 const MovieDate = styled.div`
@@ -84,6 +85,7 @@ const OverViewTitle = styled.div`
   padding-bottom: 25px;
   color: white;
   font-size: 28px;
+  font-weight: bold;
 `;
 
 const OverViewContent = styled.div`
