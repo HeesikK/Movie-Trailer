@@ -1,9 +1,8 @@
-import { Container } from "@mui/material";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import { getDetailMovie, getMovieVideo } from "../../apis/api";
 import YouTube from "react-youtube";
-import { flexCenter } from "../../styles/common.style";
+import { flexAlignCenter, flexCenter } from "../../styles/common.style";
 import styled from "styled-components";
 
 const DetailPage = () => {
@@ -13,19 +12,20 @@ const DetailPage = () => {
 
   const video = movieVideo && movieVideo.results[0];
 
-  console.log(detailMovie);
-
   return (
     <S.Wrapper>
       <YouTube videoId={video && video.key} opts={{ width: 1280, height: 720, playerVars: { autoplay: 0 } }} />
       <S.MovieInfoBox>
-        <div>
-          <div>{detailMovie.title}</div>
-          <div>{`⭐${detailMovie.vote_average}`}</div>
-        </div>
-        <div>{`released at ${detailMovie.release_date}`}</div>
-        {/* <div>{detailMovie.overview}</div> */}
+        <S.Header>
+          <S.MovieTitle>{detailMovie && detailMovie.title}</S.MovieTitle>
+          <S.MovieRate>{`⭐ ${detailMovie && detailMovie.vote_average.toFixed(1)}`}</S.MovieRate>
+        </S.Header>
       </S.MovieInfoBox>
+      <S.MovieDate>{`released ${detailMovie && detailMovie.release_date}`}</S.MovieDate>
+      <S.OverView>
+        <S.OverViewTitle>OverView</S.OverViewTitle>
+        <S.OverViewContent>{detailMovie.overview}</S.OverViewContent>
+      </S.OverView>
     </S.Wrapper>
   );
 };
@@ -39,10 +39,63 @@ const Wrapper = styled.div`
 
 const MovieInfoBox = styled.div`
   ${flexCenter}
-  flex-direction:column
+  flex-direction:column;
+`;
+
+const Header = styled.div`
+  width: 1280px;
+  ${flexAlignCenter}
+  justify-content:space-between;
+  padding: 25px 0 25px 0;
+`;
+
+const MovieTitle = styled.div`
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
+  width: 640px;
+  line-height: 1.2;
+`;
+
+const MovieRate = styled.div`
+  font-size: 24px;
+  color: white;
+`;
+
+const MovieDate = styled.div`
+  width: 1280px;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 25px;
+  font-size: 25px;
+  color: white;
+`;
+
+const OverView = styled.div`
+  padding-top: 50px;
+  width: 1280px;
+`;
+
+const OverViewTitle = styled.div`
+  padding-bottom: 25px;
+  color: white;
+  font-size: 28px;
+`;
+
+const OverViewContent = styled.div`
+  font-size: 17px;
+  color: white;
+  line-height: 1.5;
 `;
 
 const S = {
   Wrapper,
   MovieInfoBox,
+  Header,
+  MovieTitle,
+  MovieRate,
+  MovieDate,
+  OverView,
+  OverViewTitle,
+  OverViewContent,
 };
