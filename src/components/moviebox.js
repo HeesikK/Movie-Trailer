@@ -1,14 +1,26 @@
 import styled from "@emotion/styled";
 import { flexCenter } from "../styles/common.style";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const MovieBox = ({ title, overview, id, poster }) => {
   const img_url = `https://image.tmdb.org/t/p/original${poster}`;
   const [isShow, setIsShow] = useState(false);
 
+  const navigate = useNavigate();
+  const goToMovieDetail = () => {
+    navigate(`/movie/${id}`);
+  };
+
   return (
     <S.OneMovie>
-      <S.MovieContainer style={{ backgroundImage: `url(${img_url})`, backgroundSize: 200 }} className="hoverImg" onMouseOver={() => setIsShow(true)} onMouseLeave={() => setIsShow(false)}>
+      <S.MovieContainer
+        style={{ backgroundImage: `url(${img_url})`, backgroundSize: 200 }}
+        className="hoverImg"
+        onMouseOver={() => setIsShow(true)}
+        onMouseLeave={() => setIsShow(false)}
+        onClick={goToMovieDetail}
+      >
         {isShow && (
           <>
             <S.MovieTitle>{title}</S.MovieTitle>
