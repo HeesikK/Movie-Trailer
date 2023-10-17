@@ -36,15 +36,8 @@ const MovieContainer = styled.div`
   z-index: 0;
   &:hover {
     cursor: pointer;
+    filter: drop-shadow(0 0 15px blue);
     transition: 1s;
-    filter: brightness(0.8);
-
-    /* z-index: 1000; */
-    /* filter: brightness(0.7); */
-    /* background-color: rgba(0, 0, 0, 0.7);
-    opacity: 1;
-    transition: 1s; */
-    /* opacity: 0.5; */
   }
 `;
 
@@ -54,13 +47,13 @@ const MovieTitle = styled.div`
   height: 65px;
   padding-top: 20px;
   line-height: 1.2;
-  color: #c4c4c4;
+  -webkit-text-stroke: 1px gainsboro;
 `;
 
 const MovieOverView = styled.div`
   line-height: 1.4;
-  padding-top: 15px;
-  color: #c4c4c4;
+  padding-top: 20px;
+  -webkit-text-stroke: 1px gainsboro;
   display: -webkit-box;
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;

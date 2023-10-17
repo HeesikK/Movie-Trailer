@@ -17,7 +17,7 @@ const Header = () => {
       </S.Navbar>
       <div>
         <FontAwesomeIcon icon={faMagnifyingGlass} style={{ position: "relative", left: 18 }} />
-        <S.MovieInput type="text" />
+        <S.MovieInput type="text" style={{ backgroundColor: "white" }} />
       </div>
     </S.Wrapper>
   );
