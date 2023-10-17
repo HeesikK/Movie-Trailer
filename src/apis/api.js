@@ -12,6 +12,5 @@ export const getDetailMovie = async (id) => {
 
 export const getMovieVideo = async (id) => {
   const res = await axiosInstance.get(`/movie/${id}/videos`);
-  console.log(res.data);
   return res.data;
 };

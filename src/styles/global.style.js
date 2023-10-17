@@ -11,7 +11,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background-color: #83aeeb;
+    background-color: #4d5eb3;
     /* overflow-x: hidden; */
   }
   button {
