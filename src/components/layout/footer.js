@@ -10,7 +10,7 @@ export default Footer;
 const Wrapper = styled.div`
   background-color: #c25a4a;
   width: 100%;
-  padding: 15px 0 15px 0;
+  padding: 10px 0 10px 0;
   color: white;
   ${flexCenter}
 `;

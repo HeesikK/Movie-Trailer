@@ -14,18 +14,12 @@ const MovieBox = ({ title, overview, id, poster }) => {
 
   return (
     <S.OneMovie>
-      <S.MovieContainer
-        style={{ backgroundImage: `url(${img_url})`, backgroundSize: 200 }}
-        className="hoverImg"
-        onMouseOver={() => setIsShow(true)}
-        onMouseLeave={() => setIsShow(false)}
-        onClick={goToMovieDetail}
-      >
+      <S.MovieContainer style={{ backgroundImage: `url(${img_url})`, backgroundSize: 200 }} onMouseOver={() => setIsShow(true)} onMouseLeave={() => setIsShow(false)} onClick={goToMovieDetail}>
         {isShow && (
-          <>
+          <S.Movie>
             <S.MovieTitle>{title}</S.MovieTitle>
             <S.MovieOverView>{overview}</S.MovieOverView>
-          </>
+          </S.Movie>
         )}
       </S.MovieContainer>
     </S.OneMovie>
@@ -38,6 +32,10 @@ const OneMovie = styled.div`
   ${flexCenter}
 `;
 
+const Movie = styled.div`
+  padding-left: 5px;
+`;
+
 const MovieContainer = styled.div`
   width: 200px;
   height: 300px;
@@ -45,10 +43,11 @@ const MovieContainer = styled.div`
   padding: 5px;
   box-sizing: border-box;
   border-radius: 5px;
-  z-index: 0;
+  position: relative;
   &:hover {
     cursor: pointer;
-    filter: drop-shadow(0 0 15px blue);
+    filter: drop-shadow(5px 5px 5px black);
+    transform: scale(1.05);
     transition: 1s;
   }
 `;
@@ -59,13 +58,15 @@ const MovieTitle = styled.div`
   height: 65px;
   padding-top: 20px;
   line-height: 1.2;
-  -webkit-text-stroke: 1px gainsboro;
+  color: white;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 `;
 
 const MovieOverView = styled.div`
   line-height: 1.4;
-  padding-top: 20px;
-  -webkit-text-stroke: 1px gainsboro;
+  padding-top: 50px;
+  color: white;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
   display: -webkit-box;
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
@@ -75,6 +76,7 @@ const MovieOverView = styled.div`
 
 const S = {
   OneMovie,
+  Movie,
   MovieContainer,
   MovieTitle,
   MovieOverView,

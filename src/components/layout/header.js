@@ -65,7 +65,7 @@ const FilterList = styled.ul`
     padding: 15px;
     cursor: pointer;
     &:hover {
-      color: red;
+      color: #1c2645;
     }
   }
 `;
