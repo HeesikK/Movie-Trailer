@@ -16,7 +16,7 @@ const SearchPage = () => {
   const searchMovieList = movieList && movieList.filter((movie) => movie.title.toLowerCase().includes(keyword));
 
   return (
-    <Container>
+    <S.Wrapper>
       {searchMovieList && searchMovieList.length > 0 ? (
         <S.SearchResult>This is the search result of the "{keyword}"</S.SearchResult>
       ) : (
@@ -26,11 +26,16 @@ const SearchPage = () => {
         searchMovieList.map((movie) => (
           <OneMovie poster={movie.poster_path} backdrop_poster={movie.backdrop_path} title={movie.title} overview={movie.overview} date={movie.release_date} id={movie.id} />
         ))}
-    </Container>
+    </S.Wrapper>
   );
 };
 
 export default SearchPage;
+
+const Wrapper = styled.div`
+  ${flexCenter}
+  flex-direction:column;
+`;
 
 const SearchResult = styled.div`
   ${flexCenter}
@@ -41,5 +46,6 @@ const SearchResult = styled.div`
 `;
 
 const S = {
+  Wrapper,
   SearchResult,
 };

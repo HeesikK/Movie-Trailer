@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import { flexAlignCenter, flexCenter } from "../../styles/common.style";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
@@ -39,8 +37,6 @@ const Wrapper = styled.div`
   justify-content: space-between;
   ${flexAlignCenter};
   padding: 20px 60px 20px 60px;
-  /* margin-left: 50px;
-  margin-right: 50px; */
   background-color: #c25a4a;
   z-index: 100;
   position: fixed;

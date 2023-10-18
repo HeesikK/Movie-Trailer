@@ -33,7 +33,6 @@ const Wrapper = styled.div`
   position: relative;
   background-color: black;
   width: 1000px;
-  margin-left: 70px;
 `;
 
 const BackDrop_Poster = styled.img`

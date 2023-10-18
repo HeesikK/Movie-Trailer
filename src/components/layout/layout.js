@@ -18,7 +18,7 @@ const Layout = () => {
 export default Layout;
 
 const Main = styled.div`
-  padding-top: 100px;
+  padding: 100px 0 20px 0;
 `;
 
 const S = {

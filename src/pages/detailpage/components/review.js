@@ -68,7 +68,9 @@ const ReviewAuthor = styled.div`
 `;
 
 const ReviewDate = styled.div`
-  color: #383838;
+  color: white;
+  opacity: 0.5;
+  font-size: 14px;
 `;
 
 const ReviewContent = styled.div`
