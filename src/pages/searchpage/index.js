@@ -3,6 +3,8 @@ import { useQuery } from "@tanstack/react-query";
 import { useSearchParams } from "react-router-dom";
 import { getMovieList } from "../../apis/api";
 import OneMovie from "./component/moviebox";
+import styled from "styled-components";
+import { flexAlignCenter, flexCenter } from "../../styles/common.style";
 
 const SearchPage = () => {
   const [query] = useSearchParams();
@@ -12,15 +14,32 @@ const SearchPage = () => {
   const movieList = data && data.results;
 
   const searchMovieList = movieList && movieList.filter((movie) => movie.title.toLowerCase().includes(keyword));
-  console.log(searchMovieList);
-  console.log(movieList);
 
   return (
     <Container>
+      {searchMovieList && searchMovieList.length > 0 ? (
+        <S.SearchResult>This is the search result of the "{keyword}"</S.SearchResult>
+      ) : (
+        <S.SearchResult>No results were found for "{keyword}"</S.SearchResult>
+      )}
       {searchMovieList &&
-        searchMovieList.map((movie) => <OneMovie poster={movie.poster_path} backdrop_poster={movie.backdrop_path} title={movie.title} overview={movie.overview} date={movie.release_date} />)}
+        searchMovieList.map((movie) => (
+          <OneMovie poster={movie.poster_path} backdrop_poster={movie.backdrop_path} title={movie.title} overview={movie.overview} date={movie.release_date} id={movie.id} />
+        ))}
     </Container>
   );
 };
 
 export default SearchPage;
+
+const SearchResult = styled.div`
+  ${flexCenter}
+  padding: 30px 0 50px 0;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+`;
+
+const S = {
+  SearchResult,
+};

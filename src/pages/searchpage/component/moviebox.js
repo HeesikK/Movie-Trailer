@@ -1,10 +1,17 @@
 import { Container } from "@mui/material";
 import { flexCenter } from "../../../styles/common.style";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
-const OneMovie = ({ poster, backdrop_poster, title, overview, date }) => {
+const OneMovie = ({ poster, backdrop_poster, title, overview, date, id }) => {
   const backdrop_posterURL = `https://image.tmdb.org/t/p/w780/${backdrop_poster}`;
   const posterURL = `https://image.tmdb.org/t/p/original${poster}`;
+
+  const navigate = useNavigate();
+
+  const goToDetail = () => {
+    navigate(`/movie/${id}`);
+  };
 
   return (
     <S.Wrapper>
@@ -12,7 +19,7 @@ const OneMovie = ({ poster, backdrop_poster, title, overview, date }) => {
       <S.Title>{title}</S.Title>
       <S.OverView>{overview}</S.OverView>
       <S.Date>released {date}</S.Date>
-      <S.Poster src={posterURL} />
+      <S.Poster src={posterURL} onClick={goToDetail} />
     </S.Wrapper>
   );
 };
@@ -62,7 +69,7 @@ const OverView = styled.div`
   width: 600px;
   left: 325px;
   top: 175px;
-  line-height: 1.3;
+  line-height: 1.5;
   color: white;
 `;
 
