@@ -5,12 +5,13 @@ import { getMovieList } from "../../apis/api";
 import OneMovie from "./component/moviebox";
 import styled from "styled-components";
 import { flexAlignCenter, flexCenter } from "../../styles/common.style";
+import { QUERY_KEY } from "../../consts/queryKey";
 
 const SearchPage = () => {
   const [query] = useSearchParams();
   const keyword = query.get("keyword");
 
-  const { data } = useQuery(["getMovie"], ({ pageParam = 1 }) => getMovieList(pageParam));
+  const { data } = useQuery([QUERY_KEY.Home], ({ pageParam = 1 }) => getMovieList(pageParam));
   const movieList = data && data.results;
 
   const searchMovieList = movieList && movieList.filter((movie) => movie.title.toLowerCase().includes(keyword));

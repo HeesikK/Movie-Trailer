@@ -3,9 +3,10 @@ import { getSimilarMove } from "../../../apis/api";
 import { Container, Grid } from "@mui/material";
 import MovieBox from "../../../components/moviebox";
 import styled from "styled-components";
+import { QUERY_KEY } from "../../../consts/queryKey";
 
 const SimilarMovie = ({ id }) => {
-  const { data: similarMovie } = useQuery(["getSimilar"], () => getSimilarMove(id));
+  const { data: similarMovie } = useQuery([QUERY_KEY.SimilarMovie], () => getSimilarMove(id));
 
   const similarMovieList = similarMovie && similarMovie.results;
 

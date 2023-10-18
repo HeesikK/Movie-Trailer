@@ -46,7 +46,7 @@ const MovieContainer = styled.div`
   position: relative;
   &:hover {
     cursor: pointer;
-    filter: drop-shadow(5px 5px 5px black);
+    filter: drop-shadow(10px 10px 10px black);
     transform: scale(1.05);
     transition: 1s;
   }
@@ -54,6 +54,7 @@ const MovieContainer = styled.div`
 
 const MovieTitle = styled.div`
   font-weight: bold;
+  font-size: 19.5px;
   width: 185px;
   height: 65px;
   padding-top: 20px;

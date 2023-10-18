@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const ScrollBTN = () => {
-  const [isShowButton, setIsShowButton] = useState(true);
+  const [isShowButton, setIsShowButton] = useState(false);
 
   const onHandleScroll = () => {
     const { scrollY } = window;

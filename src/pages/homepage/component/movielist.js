@@ -2,30 +2,14 @@ import { Container, Grid } from "@mui/material";
 import MovieBox from "../../../components/moviebox";
 import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 import { getMovieList } from "../../../apis/api";
+import { QUERY_KEY } from "../../../consts/queryKey";
 
 const MovieList = () => {
-  const { data } = useQuery(["getMovie"], ({ pageParam = 1 }) => getMovieList(pageParam));
+  const { data } = useQuery([QUERY_KEY.Home], ({ pageParam = 1 }) => getMovieList(pageParam));
   console.log(data);
-
-  // const fetchData = ({ pageParam = 1 }) => {
-  //   getMovieList(pageParam);
-  // };
-  // const { data, fetchNextPage, isFetching } = useInfiniteQuery({
-  //   queryKey: ["getMovie"],
-  //   queryFn: fetchData,
-  //   getNextPageParam:
-  // });
 
   const movieList = data && data.results;
   console.log(movieList);
-
-  const scrollBottom = () => {
-    const scrollHeight = document.documentElement.scrollHeight;
-    const scrollTop = document.documentElement.scrollTop;
-    const clientHeight = document.documentElement.clientHeight;
-
-    if (scrollTop + clientHeight >= scrollHeight) return;
-  };
 
   return (
     <Container>
@@ -42,3 +26,20 @@ const MovieList = () => {
 };
 
 export default MovieList;
+
+// const fetchData = ({ pageParam = 1 }) => {
+//   getMovieList(pageParam);
+// };
+// const { data, fetchNextPage, isFetching } = useInfiniteQuery({
+//   queryKey: ["getMovie"],
+//   queryFn: fetchData,
+//   getNextPageParam:
+// });
+
+// const scrollBottom = () => {
+//   const scrollHeight = document.documentElement.scrollHeight;
+//   const scrollTop = document.documentElement.scrollTop;
+//   const clientHeight = document.documentElement.clientHeight;
+
+//   if (scrollTop + clientHeight >= scrollHeight) return;
+// };

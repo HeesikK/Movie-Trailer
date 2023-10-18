@@ -48,6 +48,7 @@ const Poster = styled.img`
   left: 80px;
   &:hover {
     cursor: pointer;
+    filter: drop-shadow(10px 10px 10px black);
     transform: scale(1.05);
     transition: all 0.2s linear;
   }
@@ -70,6 +71,11 @@ const OverView = styled.div`
   top: 175px;
   line-height: 1.5;
   color: white;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  overflow: hidden;
 `;
 
 const Date = styled.div`

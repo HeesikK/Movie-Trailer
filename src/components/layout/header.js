@@ -17,7 +17,7 @@ const Header = () => {
       <S.Navbar>
         <S.Logo src="https://www.shareicon.net/data/2016/09/13/828455_logo_512x512.png" onClick={() => navigate("/")} />
         <S.FilterList>
-          <li>Now Playing</li>
+          <li onClick={() => navigate("/now_playing")}>Now Playing</li>
           <li>Popular</li>
           <li>Top Rated</li>
           <li>Upcoming</li>

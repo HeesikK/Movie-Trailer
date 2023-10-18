@@ -6,11 +6,12 @@ import { flexAlignCenter, flexCenter } from "../../styles/common.style";
 import styled from "styled-components";
 import Review from "./components/review";
 import SimilarMovie from "./components/similar";
+import { QUERY_KEY } from "../../consts/queryKey";
 
 const DetailPage = () => {
   const { id } = useParams();
   const { data: detailMovie } = useQuery(["getDetail"], () => getDetailMovie(id));
-  const { data: movieVideo } = useQuery(["getVideo"], () => getMovieVideo(id));
+  const { data: movieVideo } = useQuery([QUERY_KEY.Video], () => getMovieVideo(id));
 
   const video = movieVideo && movieVideo.results[0];
 
