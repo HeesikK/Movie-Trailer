@@ -75,6 +75,7 @@ const MovieDate = styled.div`
   padding-top: 25px;
   font-size: 25px;
   color: white;
+  opacity: 0.5;
 `;
 
 const OverView = styled.div`

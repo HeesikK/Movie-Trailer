@@ -10,14 +10,14 @@ const Header = () => {
   const onSearchMovie = (e) => {
     if (e.key === "Enter") {
       let keyword = e.target.value;
-      navigate(`/movie/search/?keyword=${keyword}`);
+      navigate(`/movie/search?keyword=${keyword}`);
     }
   };
 
   return (
     <S.Wrapper>
       <S.Navbar>
-        <img src="https://cdn.logo.com/hotlink-ok/logo-social.png" width={150} />
+        <S.Logo src="https://www.shareicon.net/data/2016/09/13/828455_logo_512x512.png" onClick={() => navigate("/")} />
         <S.FilterList>
           <li>Now Playing</li>
           <li>Popular</li>
@@ -25,10 +25,10 @@ const Header = () => {
           <li>Upcoming</li>
         </S.FilterList>
       </S.Navbar>
-      <div>
-        <FontAwesomeIcon icon={faMagnifyingGlass} style={{ position: "relative", left: 18 }} />
-        <S.MovieInput type="text" style={{ backgroundColor: "#4d5eb3" }} onKeyPress={onSearchMovie} />
-      </div>
+      <S.InputBox>
+        <S.SearchIcon src="https://cdn3.iconfinder.com/data/icons/feather-5/24/search-512.png" />
+        <S.MovieInput type="text" style={{ backgroundColor: "#c25a4a" }} onKeyPress={onSearchMovie} />
+      </S.InputBox>
     </S.Wrapper>
   );
 };
@@ -38,19 +38,34 @@ export default Header;
 const Wrapper = styled.div`
   justify-content: space-between;
   ${flexAlignCenter};
-  padding: 10px;
-  margin-left: 50px;
-  margin-right: 50px;
+  padding: 20px 60px 20px 60px;
+  /* margin-left: 50px;
+  margin-right: 50px; */
+  background-color: #c25a4a;
+  z-index: 100;
+  position: fixed;
+  width: 100%;
 `;
 
 const Navbar = styled.div`
   ${flexCenter}
 `;
 
+const Logo = styled.img`
+  -webkit-filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
+  margin-right: 20px;
+  width: 60px;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
 const FilterList = styled.ul`
   ${flexCenter}
   > li {
     color: white;
+    font-weight: bold;
     padding: 15px;
     cursor: pointer;
     &:hover {
@@ -59,10 +74,22 @@ const FilterList = styled.ul`
   }
 `;
 
+const InputBox = styled.div`
+  position: relative;
+`;
+
+const SearchIcon = styled.img`
+  width: 22px;
+  position: absolute;
+  top: 5px;
+  -webkit-filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
+`;
+
 const MovieInput = styled.input`
-  padding: 10px 10px 10px 25px;
+  padding: 10px 10px 10px 30px;
   border: none;
-  border-bottom: 2.5px solid black;
+  border-bottom: 2px solid white;
   background-color: black;
   &:focus {
     outline: none;
@@ -72,6 +99,9 @@ const MovieInput = styled.input`
 const S = {
   Wrapper,
   Navbar,
+  Logo,
   FilterList,
+  InputBox,
+  SearchIcon,
   MovieInput,
 };
