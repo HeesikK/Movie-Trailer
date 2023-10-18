@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getMovieReview } from "../../../apis/api";
 import styled from "styled-components";
 import { useState } from "react";
+import { flexAlignCenter, flexCenter } from "../../../styles/common.style";
 
 const Review = ({ id }) => {
   const { data: movieReview } = useQuery(["getReview"], () => getMovieReview(id));
@@ -26,7 +27,10 @@ const Review = ({ id }) => {
         reviews.map((review) => {
           return (
             <S.ReviewContainer>
-              <S.ReviewAuthor>{review.author_details.username}</S.ReviewAuthor>
+              <S.AuthorBox>
+                <S.ReviewAuthor>{review.author_details.username}</S.ReviewAuthor>
+                <S.ReviewDate>{review.updated_at}</S.ReviewDate>
+              </S.AuthorBox>
               <S.ReviewContent>{review.content}</S.ReviewContent>
             </S.ReviewContainer>
           );
@@ -51,11 +55,20 @@ const ReviewContainer = styled.div`
   border-radius: 8px;
 `;
 
+const AuthorBox = styled.div`
+  ${flexAlignCenter}
+  justify-content: space-between;
+  padding-bottom: 35px;
+`;
+
 const ReviewAuthor = styled.div`
-  padding-bottom: 25px;
   color: white;
   font-size: 20px;
   font-weight: bold;
+`;
+
+const ReviewDate = styled.div`
+  color: #383838;
 `;
 
 const ReviewContent = styled.div`
@@ -75,7 +88,9 @@ const DropDownImage = styled.img`
 const S = {
   ReviewTitle,
   ReviewContainer,
+  AuthorBox,
   ReviewAuthor,
+  ReviewDate,
   ReviewContent,
   DropDownImage,
 };

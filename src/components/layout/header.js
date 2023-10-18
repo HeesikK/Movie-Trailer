@@ -17,7 +17,7 @@ const Header = () => {
       </S.Navbar>
       <div>
         <FontAwesomeIcon icon={faMagnifyingGlass} style={{ position: "relative", left: 18 }} />
-        <S.MovieInput type="text" style={{ backgroundColor: "white" }} />
+        <S.MovieInput type="text" style={{ backgroundColor: "#4d5eb3" }} />
       </div>
     </S.Wrapper>
   );
@@ -52,7 +52,8 @@ const FilterList = styled.ul`
 const MovieInput = styled.input`
   padding: 10px 10px 10px 25px;
   border: none;
-  border-bottom: 2px solid black;
+  border-bottom: 2.5px solid black;
+  background-color: black;
   &:focus {
     outline: none;
   }
