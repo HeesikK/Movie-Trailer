@@ -39,6 +39,7 @@ export default DetailPage;
 const Wrapper = styled.div`
   ${flexCenter}
   flex-direction: column;
+  margin-top: 35px;
 `;
 
 const MovieInfoBox = styled.div`

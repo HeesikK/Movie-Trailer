@@ -2,8 +2,18 @@ import styled from "styled-components";
 import { flexAlignCenter, flexCenter } from "../../styles/common.style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const onSearchMovie = (e) => {
+    if (e.key === "Enter") {
+      let keyword = e.target.value;
+      navigate(`/movie/search/?keyword=${keyword}`);
+    }
+  };
+
   return (
     <S.Wrapper>
       <S.Navbar>
@@ -17,7 +27,7 @@ const Header = () => {
       </S.Navbar>
       <div>
         <FontAwesomeIcon icon={faMagnifyingGlass} style={{ position: "relative", left: 18 }} />
-        <S.MovieInput type="text" style={{ backgroundColor: "#4d5eb3" }} />
+        <S.MovieInput type="text" style={{ backgroundColor: "#4d5eb3" }} onKeyPress={onSearchMovie} />
       </div>
     </S.Wrapper>
   );
