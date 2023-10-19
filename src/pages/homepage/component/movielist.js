@@ -25,7 +25,7 @@ const MovieList = () => {
   // const { data } = useQuery([QUERY_KEY.paramKeyword], ({ pageParam = 1 }) => getFilterMovieList(paramKeyword, pageParam));
   // console.log("parma 값은?", param.movie);
 
-  const movieList = data && data.results;
+  const movieList = data?.results;
   console.log(movieList);
 
   return (
