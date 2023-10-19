@@ -25,14 +25,14 @@ const MovieList = () => {
   // const { data } = useQuery([QUERY_KEY.paramKeyword], ({ pageParam = 1 }) => getFilterMovieList(paramKeyword, pageParam));
   // console.log("parma 값은?", param.movie);
 
-  const movieList = data?.results;
+  const movieList = data && data.results;
   console.log(movieList);
 
   return (
     <Container>
       <Grid container spacing={2}>
-        {data &&
-          data.results?.map((movie) => (
+        {movieList &&
+          movieList.map((movie) => (
             <Grid item xs={3}>
               <MovieBox title={movie.title} overview={movie.overview} id={movie.id} poster={movie.poster_path} />
             </Grid>
