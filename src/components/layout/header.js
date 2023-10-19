@@ -45,7 +45,7 @@ const Wrapper = styled.div`
   ${flexAlignCenter};
   padding: 20px 60px 20px 60px;
   background-color: #c25a4a;
-  z-index: 100;
+  z-index: 99999;
   position: fixed;
   width: 100%;
 `;

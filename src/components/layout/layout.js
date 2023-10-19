@@ -13,6 +13,7 @@ const Layout = () => {
         <Outlet />
         <ScrollBTN />
       </S.Main>
+      <Footer />
     </>
   );
 };
