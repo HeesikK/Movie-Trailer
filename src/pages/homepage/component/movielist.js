@@ -14,7 +14,7 @@ const MovieList = () => {
 
   // console.log("변경된 param은?", paramKeyword);
 
-  const { data } = useQuery([QUERY_KEY.Home], ({ pageParam = 1 }) => getMovieList(pageParam));
+  // const { data } = useQuery([QUERY_KEY.Home], ({ pageParam = 1 }) => getMovieList(pageParam));
   // console.log(data);
 
   // const param = useParams();
@@ -22,7 +22,7 @@ const MovieList = () => {
   // const paramKeyword = param.movie === "movie" ? "popular" : param.movie;
   // console.log(paramKeyword);
 
-  // const { data } = useQuery([QUERY_KEY.paramKeyword], ({ pageParam = 1 }) => getFilterMovieList(paramKeyword, pageParam));
+  const { data } = useQuery([QUERY_KEY.paramKeyword], ({ pageParam = 1 }) => getFilterMovieList(paramKeyword, pageParam));
   // console.log("parma 값은?", param.movie);
 
   const movieList = data && data.results;
