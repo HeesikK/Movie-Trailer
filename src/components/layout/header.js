@@ -1,9 +1,12 @@
 import styled from "styled-components";
 import { flexAlignCenter, flexCenter } from "../../styles/common.style";
 import { useNavigate } from "react-router-dom";
+import { QUERY_KEY } from "../../consts/queryKey";
+import { useState } from "react";
 
 const Header = () => {
   const navigate = useNavigate();
+  const [filterMovie, setFilterMovie] = useState();
 
   const onSearchMovie = (e) => {
     if (e.key === "Enter") {
@@ -12,15 +15,19 @@ const Header = () => {
     }
   };
 
+  const goToDifferentMovie = (movieKey) => {
+    navigate(movieKey);
+  };
+
   return (
     <S.Wrapper>
       <S.Navbar>
         <S.Logo src="https://www.shareicon.net/data/2016/09/13/828455_logo_512x512.png" onClick={() => navigate("/")} />
         <S.FilterList>
-          <li onClick={() => navigate("/now_playing")}>Now Playing</li>
-          <li>Popular</li>
-          <li>Top Rated</li>
-          <li>Upcoming</li>
+          <li onClick={() => goToDifferentMovie(QUERY_KEY.now_playing)}>Now Playing</li>
+          <li onClick={() => goToDifferentMovie(QUERY_KEY.popular)}>Popular</li>
+          <li onClick={() => goToDifferentMovie(QUERY_KEY.top_rated)}>Top Rated</li>
+          <li onClick={() => goToDifferentMovie(QUERY_KEY.upcoming)}>Upcoming</li>
         </S.FilterList>
       </S.Navbar>
       <S.InputBox>

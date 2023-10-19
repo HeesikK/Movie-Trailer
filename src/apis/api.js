@@ -5,6 +5,11 @@ export const getMovieList = async (pageParam) => {
   return res.data;
 };
 
+export const getFilterMovieList = async (type, pageParam) => {
+  const res = await axiosInstance.get(`/movie/${type}?language=en-US&page=${pageParam}`);
+  return res.data;
+};
+
 export const getDetailMovie = async (id) => {
   const res = await axiosInstance.get(`/movie/${id}`);
   return res.data;
