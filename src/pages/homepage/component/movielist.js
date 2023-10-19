@@ -31,7 +31,7 @@ const MovieList = () => {
   return (
     <Container>
       <Grid container spacing={2}>
-        {data.results?.map((movie) => (
+        {data?.results.map((movie) => (
           <Grid item xs={3}>
             <MovieBox title={movie.title} overview={movie.overview} id={movie.id} poster={movie.poster_path} />
           </Grid>
