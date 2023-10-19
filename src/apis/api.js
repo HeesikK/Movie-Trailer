@@ -6,7 +6,7 @@ export const getMovieList = async (pageParam) => {
 };
 
 export const getFilterMovieList = async (type, pageParam) => {
-  const res = await axiosInstance.get(`/movie/${type}?language=en-US&page=${pageParam}`);
+  const res = await axiosInstance.get(`/movie/${type}`);
   return res.data;
 };
 

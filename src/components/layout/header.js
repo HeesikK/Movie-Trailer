@@ -6,7 +6,6 @@ import { useState } from "react";
 
 const Header = () => {
   const navigate = useNavigate();
-  const [filterMovie, setFilterMovie] = useState();
 
   const onSearchMovie = (e) => {
     if (e.key === "Enter") {
