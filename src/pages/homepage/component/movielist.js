@@ -6,11 +6,11 @@ import { QUERY_KEY } from "../../../consts/queryKey";
 import { useParams } from "react-router-dom";
 
 const MovieList = () => {
-  // const param = useParams();
-  // console.log("param값은? ", param);
+  const param = useParams();
+  console.log("param값은? ", param);
 
-  // let paramKeyword = param.movie === undefined ? "popular" : param.movie;
-  // console.log(paramKeyword);
+  let paramKeyword = param.movie === undefined ? "popular" : param.movie;
+  console.log(paramKeyword);
 
   // console.log("변경된 param은?", paramKeyword);
 
