@@ -11,6 +11,7 @@ const OneMovie = ({ poster, backdrop_poster, title, overview, date, id }) => {
 
   const goToDetail = () => {
     navigate(`/movie/${id}`);
+    window.scrollTo(0, 0);
   };
 
   return (

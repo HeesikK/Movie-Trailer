@@ -10,9 +10,10 @@ import { QUERY_KEY } from "../../consts/queryKey";
 
 const DetailPage = () => {
   const { id } = useParams();
-  const { data: detailMovie } = useQuery(["getDetail"], () => getDetailMovie(id));
-  const { data: movieVideo } = useQuery([QUERY_KEY.Video], () => getMovieVideo(id));
+  const { data: detailMovie } = useQuery([QUERY_KEY.Detail, id], () => getDetailMovie(id));
+  const { data: movieVideo } = useQuery([QUERY_KEY.Video, id], () => getMovieVideo(id));
 
+  console.log("id는", id);
   const video = movieVideo && movieVideo.results[0];
 
   return (

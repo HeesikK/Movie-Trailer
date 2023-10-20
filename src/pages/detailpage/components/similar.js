@@ -6,7 +6,7 @@ import styled from "styled-components";
 import { QUERY_KEY } from "../../../consts/queryKey";
 
 const SimilarMovie = ({ id }) => {
-  const { data: similarMovie } = useQuery([QUERY_KEY.SimilarMovie], () => getSimilarMove(id));
+  const { data: similarMovie } = useQuery([QUERY_KEY.SimilarMovie, id], () => getSimilarMove(id));
 
   const similarMovieList = similarMovie && similarMovie.results;
 

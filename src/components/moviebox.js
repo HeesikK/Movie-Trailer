@@ -10,6 +10,7 @@ const MovieBox = ({ title, overview, id, poster }) => {
   const navigate = useNavigate();
   const goToMovieDetail = () => {
     navigate(`/movie/${id}`);
+    window.scrollTo(0, 0);
   };
 
   return (
