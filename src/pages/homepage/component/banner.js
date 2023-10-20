@@ -6,7 +6,7 @@ import styled from "styled-components";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Carousel = () => {
+const Banner = () => {
   const { data } = useQuery([QUERY_KEY.Home], ({ pageParam = 1 }) => getMovieList(pageParam));
   const MovieList = data && data.results;
 
@@ -54,7 +54,7 @@ const Carousel = () => {
   );
 };
 
-export default Carousel;
+export default Banner;
 
 const Title = styled.div`
   color: none;
@@ -70,7 +70,7 @@ const Title = styled.div`
 
 const OverView = styled.div`
   position: absolute;
-  top: 245px;
+  top: 260px;
   color: white;
   z-index: 999;
   width: 700px;

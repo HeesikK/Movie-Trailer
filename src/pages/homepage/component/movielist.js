@@ -10,23 +10,10 @@ const MovieList = () => {
   console.log("param값은? ", param);
 
   let paramKeyword = param.movie === undefined ? "popular" : param.movie;
-  console.log(paramKeyword);
-
-  // console.log("변경된 param은?", paramKeyword);
-
-  // const { data } = useQuery([QUERY_KEY.Home], ({ pageParam = 1 }) => getMovieList(pageParam));
-  // console.log(data);
-
-  // const param = useParams();
-
-  // const paramKeyword = param.movie === "movie" ? "popular" : param.movie;
-  // console.log(paramKeyword);
 
   const { data } = useQuery([QUERY_KEY.paramKeyword, paramKeyword], ({ pageParam = 1 }) => getFilterMovieList(paramKeyword, pageParam));
-  // console.log("parma 값은?", param.movie);
 
   const movieList = data && data.results;
-  console.log(movieList);
 
   return (
     <Container>

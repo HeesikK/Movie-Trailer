@@ -22,16 +22,16 @@ const ScrollBTN = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  return <>{isShowButton && <S.ScrollUpButton src="https://d1k5j68ob7clqb.cloudfront.net/processed/thumb/7puK9W5jGADhYQ.png" onClick={goToScrollTop} />}</>;
+  return <>{isShowButton && <S.ScrollUpButton src="https://static.thenounproject.com/png/607570-200.png" onClick={goToScrollTop} />}</>;
 };
 
 export default ScrollBTN;
 
 const ScrollUpButton = styled.img`
   position: fixed;
-  width: 70px;
-  right: 30px;
-  bottom: 45px;
+  width: 40px;
+  right: 40px;
+  bottom: 60px;
   -webkit-filter: brightness(0) invert(1);
   filter: brightness(0) invert(1);
   &:hover {

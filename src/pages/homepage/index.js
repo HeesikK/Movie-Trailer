@@ -1,10 +1,10 @@
-import Carousel from "./component/carousel";
+import Banner from "./component/banner";
 import MovieList from "./component/movielist";
 
 const HomePage = () => {
   return (
     <>
-      <Carousel />
+      <Banner />
       <MovieList />
     </>
   );
