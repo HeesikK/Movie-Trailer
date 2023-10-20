@@ -9,11 +9,8 @@ import styled from "styled-components";
 
 const MovieList = () => {
   const param = useParams();
-  console.log("param값은? ", param);
 
   let paramKeyword = param.movie === undefined ? "popular" : param.movie;
-
-  // const { data } = useQuery([QUERY_KEY.paramKeyword, paramKeyword], ({ pageParam = 1 }) => getFilterMovieList(paramKeyword, pageParam));
 
   const { data, fetchNextPage } = useInfiniteQuery({
     queryKey: [QUERY_KEY.paramKeyword, paramKeyword],
@@ -47,8 +44,6 @@ const MovieList = () => {
     };
   }, [handleScroll]);
 
-  console.log("데이터는?", data);
-
   return (
     <Container>
       <Type>{param.movie === undefined ? "Recommended content" : param.movie.toUpperCase()}</Type>
@@ -78,20 +73,3 @@ const Type = styled.div`
   font-weight: bold;
   margin-bottom: 50px;
 `;
-
-// const fetchData = ({ pageParam = 1 }) => {
-//   getMovieList(pageParam);
-// };
-// const { data, fetchNextPage, isFetching } = useInfiniteQuery({
-//   queryKey: ["getMovie"],
-//   queryFn: fetchData,
-//   getNextPageParam:
-// });
-
-// const scrollBottom = () => {
-//   const scrollHeight = document.documentElement.scrollHeight;
-//   const scrollTop = document.documentElement.scrollTop;
-//   const clientHeight = document.documentElement.clientHeight;
-
-//   if (scrollTop + clientHeight >= scrollHeight) return;
-// };

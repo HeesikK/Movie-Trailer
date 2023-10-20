@@ -6,6 +6,7 @@ import { useState } from "react";
 
 const Header = () => {
   const navigate = useNavigate();
+  const [isSelect, setIsSelect] = useState();
 
   const onSearchMovie = (e) => {
     if (e.key === "Enter") {
@@ -17,7 +18,10 @@ const Header = () => {
   const goToDifferentMovie = (movieKey) => {
     navigate(movieKey);
     window.scrollTo(0, 0);
+    setIsSelect(movieKey);
   };
+
+  console.log("선택된 값은?", isSelect);
 
   return (
     <S.Wrapper>
@@ -91,6 +95,7 @@ const SearchIcon = styled.img`
 
 const MovieInput = styled.input`
   padding: 10px 10px 10px 30px;
+  color: white;
   border: none;
   border-bottom: 2px solid white;
   background-color: black;
