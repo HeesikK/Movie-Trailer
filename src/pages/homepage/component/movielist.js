@@ -26,8 +26,9 @@ const MovieList = () => {
     },
   });
 
-  // height가 445일때 scrollBottom으로 인식하고 무한스크롤?
-  /*  스크롤 이벤트 참조 블로그  
+  /*  
+      height가 445일때 scrollBottom으로 인식하고 무한스크롤?
+      스크롤 이벤트 참조 블로그  
       https://velog.io/@leejpsd/React-%EC%8A%A4%ED%81%AC%EB%A1%A4%EC%9D%B4%EB%B2%A4%ED%8A%B8%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%AC%B4%ED%95%9C%EC%8A%A4%ED%81%AC%EB%A1%A4
   */
   const handleScroll = () => {
