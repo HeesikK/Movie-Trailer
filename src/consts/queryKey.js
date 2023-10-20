@@ -4,6 +4,7 @@ export const QUERY_KEY = {
   Review: "getReview",
   Detail: "getDetail",
   SimilarMovie: "getSimilar",
+  SearchMovie: "getSearchMovie",
   now_playing: "now_playing",
   popular: "popular",
   top_rated: "top_rated",

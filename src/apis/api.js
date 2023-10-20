@@ -29,3 +29,8 @@ export const getSimilarMove = async (id) => {
   const res = await axiosInstance.get(`/movie/${id}/similar`);
   return res.data;
 };
+
+export const getSearchMovie = async (keyword) => {
+  const res = await axiosInstance.get(`/search/movie?query=${keyword}`);
+  return res.data;
+};
