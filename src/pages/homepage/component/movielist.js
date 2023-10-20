@@ -5,6 +5,7 @@ import { getFilterMovieList, getMovieList } from "../../../apis/api";
 import { QUERY_KEY } from "../../../consts/queryKey";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
+import styled from "styled-components";
 
 const MovieList = () => {
   const param = useParams();
@@ -36,7 +37,7 @@ const MovieList = () => {
     const scrollTop = document.documentElement.scrollTop;
     const clientHeight = document.documentElement.clientHeight;
     console.log("무한스크롤 발생?", scrollTop + clientHeight >= scrollHeight);
-    if (scrollTop + clientHeight >= scrollHeight) return fetchNextPage();
+    if (scrollTop + clientHeight >= scrollHeight - 445) return fetchNextPage();
   };
 
   useEffect(() => {
@@ -50,6 +51,7 @@ const MovieList = () => {
 
   return (
     <Container>
+      <Type>{param.movie === undefined ? "Recommended content" : param.movie.toUpperCase()}</Type>
       {data &&
         data.pages.map((page) => {
           const movieList = page.results;
@@ -69,6 +71,13 @@ const MovieList = () => {
 };
 
 export default MovieList;
+
+const Type = styled.div`
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 50px;
+`;
 
 // const fetchData = ({ pageParam = 1 }) => {
 //   getMovieList(pageParam);

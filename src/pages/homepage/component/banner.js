@@ -42,6 +42,7 @@ const Banner = () => {
 
   return (
     <Container style={{ position: "relative" }}>
+      <S.TopRated>TOP 20 series in Korea today</S.TopRated>
       <S.LeftArrow src="https://static.thenounproject.com/png/1123247-200.png" onClick={showLeftImg} />
       <Title>{title && title[imgIndex]}</Title>
       <OverView>{overview && overview[imgIndex]}</OverView>
@@ -55,6 +56,13 @@ const Banner = () => {
 };
 
 export default Banner;
+
+const TopRated = styled.div`
+  margin-top: 35px;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+`;
 
 const Title = styled.div`
   color: none;
@@ -87,12 +95,12 @@ const OverView = styled.div`
 
 const PosterBox = styled.div`
   background-color: black;
-  margin: 50px 0 50px 0;
+  margin: 35px 0 50px 0;
 `;
 
 const BackDropImg = styled.img`
   width: 100%;
-  height: 560px;
+  height: 400px;
   opacity: 0.3;
 `;
 
@@ -138,6 +146,7 @@ const RightArrow = styled.img`
 `;
 
 const S = {
+  TopRated,
   PosterBox,
   BackDropImg,
   PosterImg,
