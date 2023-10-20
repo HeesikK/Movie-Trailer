@@ -36,6 +36,7 @@ const ScrollUpButton = styled.img`
   filter: brightness(0) invert(1);
   &:hover {
     cursor: pointer;
+    transform: scale(1.1);
   }
 `;
 

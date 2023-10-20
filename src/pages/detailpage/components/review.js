@@ -6,7 +6,7 @@ import { flexAlignCenter, flexCenter } from "../../../styles/common.style";
 import { QUERY_KEY } from "../../../consts/queryKey";
 
 const Review = ({ id }) => {
-  const { data: movieReview } = useQuery([QUERY_KEY.Review], () => getMovieReview(id));
+  const { data: movieReview } = useQuery([QUERY_KEY.Review, id], () => getMovieReview(id));
   const [isShowReview, setIsShowReview] = useState(false);
 
   const reviews = movieReview && movieReview.results;

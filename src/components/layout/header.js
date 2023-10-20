@@ -16,6 +16,7 @@ const Header = () => {
 
   const goToDifferentMovie = (movieKey) => {
     navigate(movieKey);
+    window.scrollTo(0, 0);
   };
 
   return (
