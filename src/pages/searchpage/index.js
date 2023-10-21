@@ -19,7 +19,7 @@ const SearchPage = () => {
 
   return (
     <S.Wrapper>
-      <S.SearchResult>{movieList && movieList.length > 0 ? `This is the search result of the ${keyword}` : `No results were found for ${keyword}`}</S.SearchResult>
+      <S.SearchResult>{movieList && movieList.length > 0 ? `This is the search result of the "${keyword}"` : `No results were found for "${keyword}"`}</S.SearchResult>
       {movieList &&
         movieList.map((movie) => <OneMovie poster={movie.poster_path} backdrop_poster={movie.backdrop_path} title={movie.title} overview={movie.overview} date={movie.release_date} id={movie.id} />)}
     </S.Wrapper>
