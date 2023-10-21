@@ -31,7 +31,7 @@ const ScrollUpButton = styled.img`
   position: fixed;
   width: 40px;
   right: 40px;
-  bottom: 60px;
+  bottom: 100px;
   -webkit-filter: brightness(0) invert(1);
   filter: brightness(0) invert(1);
   &:hover {
