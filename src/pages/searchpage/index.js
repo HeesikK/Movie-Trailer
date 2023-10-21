@@ -39,7 +39,7 @@ const NoResult = styled.div`
   color: white;
   font-size: 28px;
   font-weight: bold;
-  height: 75.8vh;
+  /* height: 75.8vh; */
 `;
 
 const SearchResult = styled.div`
