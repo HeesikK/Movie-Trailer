@@ -3,7 +3,7 @@ import { flexCenter } from "../styles/common.style";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const MovieBox = ({ title, overview, id, poster }) => {
+const MovieBox = ({ title, overview, id, poster, isFetching }) => {
   const img_url = `https://image.tmdb.org/t/p/original${poster}`;
   const [isShow, setIsShow] = useState(false);
 
@@ -15,17 +15,25 @@ const MovieBox = ({ title, overview, id, poster }) => {
 
   return (
     <S.OneMovie>
-      <S.MovieContainer style={{ backgroundImage: `url(${img_url})`, backgroundSize: 200 }} onMouseOver={() => setIsShow(true)} onMouseLeave={() => setIsShow(false)} onClick={goToMovieDetail}>
-        {isShow && (
-          <S.Movie>
-            <S.MovieTitle>{title}</S.MovieTitle>
-            <S.MovieOverView>{overview}</S.MovieOverView>
-          </S.Movie>
-        )}
-      </S.MovieContainer>
+      {isFetching ? (
+        <S.MovieContainer style={{ backgroundColor: "#bababa" }}></S.MovieContainer>
+      ) : (
+        <S.MovieContainer style={{ backgroundImage: `url(${img_url})`, backgroundSize: 200 }} onMouseOver={() => setIsShow(true)} onMouseLeave={() => setIsShow(false)} onClick={goToMovieDetail}>
+          {isShow && (
+            <S.Movie>
+              <S.MovieTitle>{title}</S.MovieTitle>
+              <S.MovieOverView>{overview}</S.MovieOverView>
+            </S.Movie>
+          )}
+        </S.MovieContainer>
+      )}
     </S.OneMovie>
   );
 };
+
+{
+  /*  */
+}
 
 export default MovieBox;
 

@@ -18,7 +18,7 @@ const DetailPage = () => {
 
   return (
     <S.Wrapper>
-      <YouTube videoId={video && video.key} opts={{ width: 1280, height: 720, playerVars: { autoplay: 0 } }} />
+      <YouTube videoId={video && video.key} opts={{ width: 1280, height: 720, playerVars: { autoplay: 1 } }} />
       <S.MovieInfoBox>
         <S.Header>
           <S.MovieTitle>{detailMovie && detailMovie.title}</S.MovieTitle>

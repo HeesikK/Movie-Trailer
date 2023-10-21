@@ -72,7 +72,7 @@ const Logo = styled.img`
 const FilterList = styled.ul`
   ${flexCenter}
   > li {
-    color: white;
+    color: ${({ theme }) => theme.COLORS.white};
     font-weight: bold;
     padding: 15px;
     cursor: pointer;

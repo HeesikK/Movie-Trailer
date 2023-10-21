@@ -12,7 +12,7 @@ const MovieList = () => {
 
   let paramKeyword = param.movie === undefined ? "popular" : param.movie;
 
-  const { data, fetchNextPage } = useInfiniteQuery({
+  const { data, fetchNextPage, isFetching } = useInfiniteQuery({
     queryKey: [QUERY_KEY.paramKeyword, paramKeyword],
     queryFn: ({ pageParam = 1 }) => getFilterMovieList(paramKeyword, pageParam),
     initialPageParam: 0,
@@ -55,7 +55,7 @@ const MovieList = () => {
               {movieList &&
                 movieList.map((movie) => (
                   <Grid item xs={3}>
-                    <MovieBox title={movie.title} overview={movie.overview} id={movie.id} poster={movie.poster_path} />
+                    <MovieBox title={movie.title} overview={movie.overview} id={movie.id} poster={movie.poster_path} isFetching={isFetching} />
                   </Grid>
                 ))}
             </Grid>
