@@ -26,7 +26,10 @@ const Header = () => {
   return (
     <S.Wrapper>
       <S.Navbar>
-        <S.Logo src="https://www.shareicon.net/data/2016/09/13/828455_logo_512x512.png" onClick={() => navigate("/")} />
+        <S.Logo
+          src="https://media.discordapp.net/attachments/719528163188932632/1165109066545233990/Pngtreeletter_t_logo_png_vector_6336739.png?ex=6545a760&is=65333260&hm=42590ae66b9fce8fc37173b1ab6e2441a69e7a7d5b78b639645784fe8d0c4ae6&=&width=596&height=596"
+          onClick={() => navigate("/")}
+        />
         <S.FilterList>
           <li onClick={() => goToDifferentMovie(QUERY_KEY.now_playing)}>Now Playing</li>
           <li onClick={() => goToDifferentMovie(QUERY_KEY.popular)}>Popular</li>
@@ -59,10 +62,8 @@ const Navbar = styled.div`
 `;
 
 const Logo = styled.img`
-  -webkit-filter: brightness(0) invert(1);
-  filter: brightness(0) invert(1);
   margin-right: 20px;
-  width: 60px;
+  width: 55px;
   &:hover {
     cursor: pointer;
   }
