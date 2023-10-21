@@ -6,29 +6,31 @@ import { useState } from "react";
 
 const Header = () => {
   const navigate = useNavigate();
-  const [isSelect, setIsSelect] = useState();
 
   const onSearchMovie = (e) => {
     if (e.key === "Enter") {
       let keyword = e.target.value;
       navigate(`/movie/search?keyword=${keyword}`);
+      window.scrollTo(0, 0);
     }
   };
 
   const goToDifferentMovie = (movieKey) => {
     navigate(movieKey);
     window.scrollTo(0, 0);
-    setIsSelect(movieKey);
   };
 
-  console.log("선택된 값은?", isSelect);
+  const goToHomePage = () => {
+    navigate("/");
+    window.scrollTo(0, 0);
+  };
 
   return (
     <S.Wrapper>
       <S.Navbar>
         <S.Logo
           src="https://media.discordapp.net/attachments/719528163188932632/1165109066545233990/Pngtreeletter_t_logo_png_vector_6336739.png?ex=6545a760&is=65333260&hm=42590ae66b9fce8fc37173b1ab6e2441a69e7a7d5b78b639645784fe8d0c4ae6&=&width=596&height=596"
-          onClick={() => navigate("/")}
+          onClick={goToHomePage}
         />
         <S.FilterList>
           <li onClick={() => goToDifferentMovie(QUERY_KEY.now_playing)}>Now Playing</li>

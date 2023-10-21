@@ -39,6 +39,7 @@ const NoResult = styled.div`
   color: white;
   font-size: 28px;
   font-weight: bold;
+  min-height: calc(100vh - 180px);
 `;
 
 const SearchResult = styled.div`
