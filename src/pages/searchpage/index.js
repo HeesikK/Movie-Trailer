@@ -19,7 +19,7 @@ const SearchPage = () => {
 
   return (
     <S.Wrapper>
-      {movieList && movieList.length > 0 ? <S.SearchResult>This is the search result of the "{keyword}"</S.SearchResult> : <NoResult>No results were found for "{keyword}"</NoResult>}
+      <S.SearchResult>{movieList && movieList.length > 0 ? `This is the search result of the ${keyword}` : `No results were found for ${keyword}`}</S.SearchResult>
       {movieList &&
         movieList.map((movie) => <OneMovie poster={movie.poster_path} backdrop_poster={movie.backdrop_path} title={movie.title} overview={movie.overview} date={movie.release_date} id={movie.id} />)}
     </S.Wrapper>
@@ -31,15 +31,7 @@ export default SearchPage;
 const Wrapper = styled.div`
   ${flexCenter}
   flex-direction:column;
-`;
-
-const NoResult = styled.div`
-  ${flexCenter}
-  padding: 30px 0 50px 0;
-  color: white;
-  font-size: 28px;
-  font-weight: bold;
-  min-height: calc(100vh - 180px);
+  min-height: calc(100vh - 154.05px);
 `;
 
 const SearchResult = styled.div`

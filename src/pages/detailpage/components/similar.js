@@ -11,7 +11,7 @@ const SimilarMovie = ({ id }) => {
   const similarMovieList = similarMovie && similarMovie.results;
 
   return (
-    <Container>
+    <Container style={{ paddingBottom: 30 }}>
       <S.SimilarList>Similar Movie</S.SimilarList>
       <Grid container spacing={2}>
         {similarMovieList &&

@@ -22,7 +22,7 @@ const DetailPage = () => {
       <S.MovieInfoBox>
         <S.Header>
           <S.MovieTitle>{detailMovie && detailMovie.title}</S.MovieTitle>
-          <S.MovieRate>{`⭐ ${detailMovie && detailMovie.vote_average}`}</S.MovieRate>
+          <S.MovieRate>{`⭐ ${detailMovie && Math.round(detailMovie.vote_average)}`}</S.MovieRate>
         </S.Header>
       </S.MovieInfoBox>
       <S.MovieDate>{`released ${detailMovie && detailMovie.release_date}`}</S.MovieDate>

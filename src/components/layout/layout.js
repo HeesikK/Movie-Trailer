@@ -21,7 +21,7 @@ const Layout = () => {
 export default Layout;
 
 const Main = styled.div`
-  padding: 100px 0 20px 0;
+  padding: 100px 0 0 0;
   position: relative;
   height: 100%;
 `;
