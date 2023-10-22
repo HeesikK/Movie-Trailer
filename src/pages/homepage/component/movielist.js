@@ -34,7 +34,7 @@ const MovieList = () => {
     const scrollTop = document.documentElement.scrollTop;
     const clientHeight = document.documentElement.clientHeight;
     console.log("무한스크롤 발생?", scrollTop + clientHeight >= scrollHeight);
-    if (scrollTop + clientHeight >= scrollHeight - 445) return fetchNextPage();
+    if (scrollTop + clientHeight >= scrollHeight) return fetchNextPage();
   };
 
   useEffect(() => {

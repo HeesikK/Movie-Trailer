@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { flexAlignCenter, flexCenter } from "../../styles/common.style";
 import { useNavigate } from "react-router-dom";
 import { QUERY_KEY } from "../../consts/queryKey";
-import { useState } from "react";
 
 const Header = () => {
   const navigate = useNavigate();

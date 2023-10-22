@@ -1,8 +1,6 @@
 import { Outlet } from "react-router-dom";
-import Footer from "./footer";
 import Header from "./header";
 import styled from "styled-components";
-import { useEffect, useState } from "react";
 import ScrollBTN from "./scrollbtn";
 
 const Layout = () => {
@@ -13,7 +11,6 @@ const Layout = () => {
         <Outlet />
         <ScrollBTN />
       </S.Main>
-      <Footer />
     </>
   );
 };
