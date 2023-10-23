@@ -5,10 +5,6 @@
 ### THE MOVIE DATABASE(TMDB) API를 활용한 Movie Trailer WebSite
 </br>
 
-# 🚀 Depoly 
-
-### [TEMFLIX](https://movie-trailer-mu.vercel.app/)  
-</br>
 
 # 📑 Tech Stack 
   
@@ -25,6 +21,28 @@
   <img src="https://img.shields.io/badge/MUI-007FFF?style=flat&logo=MUI&logoColor=white" />
   <img src="https://img.shields.io/badge/styled-components-DB7093?style=flat&logo=styled-components&logoColor=white" />
 </div>
+</br>
+
+# 🚀 Depoly 
+
+### [TEMFLIX](https://movie-trailer-mu.vercel.app/)  
+</br>
+
+# 🔎 Preview
+
+### 🎥 HomePage
+https://github.com/HeesikK/Movie-Trailer/assets/127207625/a269b190-38c3-417d-b8ea-e72fef5b8998
+
+</br>
+
+### 🎥 DetailPage
+https://github.com/HeesikK/Movie-Trailer/assets/127207625/08a88de8-0d98-48ad-9ee0-a2d4818cc450
+
+</br>
+
+### 🎥 SearchPage
+https://github.com/HeesikK/Movie-Trailer/assets/127207625/2212bea1-14e9-4a47-882a-0304ff817a2c
+
 </br>
 
 # 📆 Develop Date 
@@ -127,18 +145,4 @@
  
 </br>
 
-# 🔎 Preview
-
-### 🎥 HomePage
-https://github.com/HeesikK/Movie-Trailer/assets/127207625/a269b190-38c3-417d-b8ea-e72fef5b8998
-
-</br>
-
-### 🎥 DetailPage
-https://github.com/HeesikK/Movie-Trailer/assets/127207625/08a88de8-0d98-48ad-9ee0-a2d4818cc450
-
-</br>
-
-### 🎥 SearchPage
-https://github.com/HeesikK/Movie-Trailer/assets/127207625/2212bea1-14e9-4a47-882a-0304ff817a2c
 
