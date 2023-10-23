@@ -1,7 +1,7 @@
 import { Container, Grid } from "@mui/material";
 import MovieBox from "../../../components/moviebox";
-import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
-import { getFilterMovieList, getMovieList } from "../../../apis/api";
+import { useInfiniteQuery } from "@tanstack/react-query";
+import { getFilterMovieList } from "../../../apis/api";
 import { QUERY_KEY } from "../../../consts/queryKey";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";

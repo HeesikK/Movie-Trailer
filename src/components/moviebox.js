@@ -31,6 +31,10 @@ const MovieBox = ({ title, overview, id, poster, isFetching }) => {
   );
 };
 
+{
+  /*  */
+}
+
 export default MovieBox;
 
 const OneMovie = styled.div`
