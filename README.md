@@ -1,11 +1,16 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=56e3c7&height=200&section=header&text=TEMFLIX&fontSize=50" />
 
+# 💻 Project Introduction
+
+### TMDB OPEN API를 활용한 Movie Trailer Web Site 구현
+</br>
+
 # 🚀 Depoly 
 
-[TEMFLIX](https://movie-trailer-mu.vercel.app/)  
+### [TEMFLIX](https://movie-trailer-mu.vercel.app/)  
 </br>
-</br>
-# 📑 TECH STACK 
+
+# 📑 Tech Stack 
   
 <div align="left">
 	<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=HTML5&logoColor=white" />
@@ -20,7 +25,6 @@
   <img src="https://img.shields.io/badge/MUI-007FFF?style=flat&logo=MUI&logoColor=white" />
   <img src="https://img.shields.io/badge/styled-components-DB7093?style=flat&logo=styled-components&logoColor=white" />
 </div>
-</br>
 </br>
 
 # 📆 Develop Date 
@@ -64,7 +68,36 @@
   </tr>
 </table>
 </br>
+
+# 🤙 Github Commit Convention
+<table >
+  <tr>
+    <td>Mark</td>
+    <td>Content</td>
+  </tr>
+  <tr>
+    <td>feat</td>
+    <td>새로운 기능 추가</td>
+  </tr>
+  <tr>
+    <td>fix</td>
+    <td>버그 수정</td>
+  </tr>
+  <tr>
+    <td>style</td>
+    <td>css 수정, 코드 변경이 없는 경우</td>
+  </tr>
+  <tr>
+    <td>docs</td>
+    <td>문서 수정</td>
+  </tr>
+  <tr>
+    <td>remove</td>
+    <td>폴더 삭제</td>
+  </tr>
+</table>
 </br>
+
 
 # 📁 Folder Structure
 > apis
@@ -133,3 +166,6 @@
 >> global.style.js
 >
 >> theme.style.js
+</br>
+
+# 🔎 Preview
