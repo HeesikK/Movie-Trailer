@@ -31,31 +31,105 @@
     <td>Content</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
+    <td>10/16</td>
+    <td>폴더 구조, 초기 셋팅(router 설정, 공용 css 정의)</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
+    <td>10/17</td>
+    <td>Home Page 구현, Detail Page 윤곽 잡기</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
+    <td>10/18</td>
+    <td>Detail Page Css 적용, 검색 기능 구현, Scroll Top 이벤트 구현</td>
   </tr>
   <tr>
-    <td>></td>
-    <td>></td>
+    <td>10/19</td>
+    <td>Home Page filter 구현(now-playing ,popular, top-rated, upcoming)</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
+    <td>10/20</td>
+    <td>Infinity Scroll 구현</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
+    <td>10/21</td>
+    <td>Home Page Skeleton UI 구현</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
+    <td>10/22</td>
+    <td>폴더 구조 정리(index.js에는 컴포넌트만!), Css 수정</td>
+  </tr>
+  <tr>
+    <td>10/23</td>
+    <td>README.md 작성</td>
   </tr>
 </table>
+</br>
+</br>
+
+# 📁 Folder Structure
+> apis
+> 
+>> api.js
+>
+>> core.js
+>
+> components
+>
+>> layout
+>
+>>> header.js
+>
+>>> layout.js
+>
+>>> scrollbtn.js
+>
+>> moviebox.js
+>
+> consts
+>
+>> queryKey.js
+>
+> pages
+>
+>> detailpage
+>
+>>> components
+>
+>>>> detailmovie.js
+>
+>>>> review.js
+>
+>>>> similar.js
+>
+>>> index.js
+>
+>> homepage
+>
+>>> components
+>
+>>>> banner.js
+>
+>>>> movielist.js
+>
+>>> index.js
+>
+>> searchpage
+>
+>>> components
+>
+>>>> moviebox.js
+>
+>>>> searchmovielist.js
+>
+>>> index.js
+>
+> route
+>
+>> router.js
+>
+> styles
+>> common.style.js
+>
+>> global.style.js
+>
+>> theme.style.js
