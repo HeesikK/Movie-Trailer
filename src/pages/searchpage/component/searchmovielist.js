@@ -10,10 +10,7 @@ const SearchMovieList = () => {
   const [query] = useSearchParams();
   const keyword = query.get("keyword");
 
-  console.log(keyword);
-
   const { data } = useQuery([QUERY_KEY.SearchMovie, keyword], () => getSearchMovie(keyword));
-  console.log(`${keyword}가 포함된 배열`, data);
 
   const movieList = data && data.results;
 
@@ -21,7 +18,9 @@ const SearchMovieList = () => {
     <S.Wrapper>
       <S.SearchResult>{movieList && movieList.length > 0 ? `This is the search result of the "${keyword}"` : `No results were found for "${keyword}"`}</S.SearchResult>
       {movieList &&
-        movieList.map((movie) => <OneMovie poster={movie.poster_path} backdrop_poster={movie.backdrop_path} title={movie.title} overview={movie.overview} date={movie.release_date} id={movie.id} />)}
+        movieList.map((movie, index) => (
+          <OneMovie key={index} poster={movie.poster_path} backdrop_poster={movie.backdrop_path} title={movie.title} overview={movie.overview} date={movie.release_date} id={movie.id} />
+        ))}
     </S.Wrapper>
   );
 };

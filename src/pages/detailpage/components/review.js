@@ -11,8 +11,6 @@ const Review = ({ id }) => {
 
   const reviews = movieReview && movieReview.results;
 
-  console.log("리뷰: ", reviews);
-
   const renderReview = () => {
     setIsShowReview((prev) => !prev);
   };
@@ -25,9 +23,9 @@ const Review = ({ id }) => {
       </S.ReviewTitle>
       {isShowReview &&
         reviews &&
-        reviews.map((review) => {
+        reviews.map((review, index) => {
           return (
-            <S.ReviewContainer>
+            <S.ReviewContainer key={index}>
               <S.AuthorBox>
                 <S.ReviewAuthor>{review.author_details.username}</S.ReviewAuthor>
                 <S.ReviewDate>{review.updated_at}</S.ReviewDate>
