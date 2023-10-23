@@ -2,7 +2,7 @@
 
 # 💻 Project Introduction
 
-### THE MOVIE DATABASE(TMDB) API를 활용한 Movie Trailer WebSite 구현
+### THE MOVIE DATABASE(TMDB) API를 활용한 Movie Trailer WebSite
 </br>
 
 # 🚀 Depoly 
@@ -36,7 +36,7 @@
 | 10/17 | Home Page 구현, Detail Page 윤곽 잡기  |
 | 10/18 | Detail Page Css 적용, 검색 기능 구현, Scroll Top 이벤트 구현  |
 | 10/19 | Home Page filter 구현(now-playing ,popular, top-rated, upcoming)  |
-| 10/20 | Infinity Scroll 구현  |
+| 10/20 | Infinity Scroll 구현, Home Page banner 구현  |
 | 10/21 | Home Page Skeleton UI 구현  |
 | 10/22 | 폴더 구조 정리(index.js에는 컴포넌트만!), Css 수정  |
 | 10/23 | README.md 작성  |
@@ -132,8 +132,12 @@
 ### 🎥 HomePage
 https://github.com/HeesikK/Movie-Trailer/assets/127207625/a269b190-38c3-417d-b8ea-e72fef5b8998
 
+</br>
+
 ### 🎥 DetailPage
 https://github.com/HeesikK/Movie-Trailer/assets/127207625/08a88de8-0d98-48ad-9ee0-a2d4818cc450
+
+</br>
 
 ### 🎥 SearchPage
 https://github.com/HeesikK/Movie-Trailer/assets/127207625/2212bea1-14e9-4a47-882a-0304ff817a2c
