@@ -1,4 +1,4 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&color=56e3c7&height=200&section=header&text=TEMFLIX&fontSize=50" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=dfbcf7&height=200&section=header&text=TEMFLIX&fontSize=50&fontColor=FFFFFF" />
 
 # 💻 Project Introduction
 
@@ -169,3 +169,13 @@
 </br>
 
 # 🔎 Preview
+
+### HomePage
+https://github.com/HeesikK/Movie-Trailer/assets/127207625/a269b190-38c3-417d-b8ea-e72fef5b8998
+
+### DetailPage
+https://github.com/HeesikK/Movie-Trailer/assets/127207625/08a88de8-0d98-48ad-9ee0-a2d4818cc450
+
+### SearchPage
+https://github.com/HeesikK/Movie-Trailer/assets/127207625/2212bea1-14e9-4a47-882a-0304ff817a2c
+
