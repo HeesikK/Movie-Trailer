@@ -2,7 +2,7 @@
 
 # 💻 Project Introduction
 
-### TMDB OPEN API를 활용한 Movie Trailer Web Site 구현
+### THE MOVIE DATABASE(TMDB) API를 활용한 Movie Trailer WebSite 구현
 </br>
 
 # 🚀 Depoly 
@@ -29,153 +29,112 @@
 
 # 📆 Develop Date 
 ### 2023.10.16 ~ 2023.10.23
-<table >
-  <tr>
-    <td>Date</td>
-    <td>Content</td>
-  </tr>
-  <tr>
-    <td>10/16</td>
-    <td>폴더 구조, 초기 셋팅(router 설정, 공용 css 정의)</td>
-  </tr>
-  <tr>
-    <td>10/17</td>
-    <td>Home Page 구현, Detail Page 윤곽 잡기</td>
-  </tr>
-  <tr>
-    <td>10/18</td>
-    <td>Detail Page Css 적용, 검색 기능 구현, Scroll Top 이벤트 구현</td>
-  </tr>
-  <tr>
-    <td>10/19</td>
-    <td>Home Page filter 구현(now-playing ,popular, top-rated, upcoming)</td>
-  </tr>
-  <tr>
-    <td>10/20</td>
-    <td>Infinity Scroll 구현</td>
-  </tr>
-  <tr>
-    <td>10/21</td>
-    <td>Home Page Skeleton UI 구현</td>
-  </tr>
-  <tr>
-    <td>10/22</td>
-    <td>폴더 구조 정리(index.js에는 컴포넌트만!), Css 수정</td>
-  </tr>
-  <tr>
-    <td>10/23</td>
-    <td>README.md 작성</td>
-  </tr>
-</table>
+
+| Date | Content |
+| ------------ | ------------- |
+| 10/16 | 폴더 구조, 초기 셋팅(router 설정, 공용 css 정의)  |
+| 10/17 | Home Page 구현, Detail Page 윤곽 잡기  |
+| 10/18 | Detail Page Css 적용, 검색 기능 구현, Scroll Top 이벤트 구현  |
+| 10/19 | Home Page filter 구현(now-playing ,popular, top-rated, upcoming)  |
+| 10/20 | Infinity Scroll 구현  |
+| 10/21 | Home Page Skeleton UI 구현  |
+| 10/22 | 폴더 구조 정리(index.js에는 컴포넌트만!), Css 수정  |
+| 10/23 | README.md 작성  |
 </br>
 
 # 🤙 Github Commit Convention
-<table >
-  <tr>
-    <td>Mark</td>
-    <td>Content</td>
-  </tr>
-  <tr>
-    <td>feat</td>
-    <td>새로운 기능 추가</td>
-  </tr>
-  <tr>
-    <td>fix</td>
-    <td>버그 수정</td>
-  </tr>
-  <tr>
-    <td>style</td>
-    <td>css 수정, 코드 변경이 없는 경우</td>
-  </tr>
-  <tr>
-    <td>docs</td>
-    <td>문서 수정</td>
-  </tr>
-  <tr>
-    <td>remove</td>
-    <td>폴더 삭제</td>
-  </tr>
-</table>
+
+| Mark | Content |
+| ------------ | ------------- |
+| feat | 새로운 기능 추가  |
+| fix | 버그 수정  |
+| style | css 수정, 코드 변경이 없는 경우  |
+| remove | 폴더 삭제  |
+| docs | 문서 수정  |
 </br>
 
-
 # 📁 Folder Structure
-> apis
-> 
->> api.js
+
+📦src
 >
->> core.js
+ ┣ 📂apis
 >
-> components
+ ┃ ┣ 📜api.js
+ >
+ ┃ ┗ 📜core.js
 >
->> layout
+ ┣ 📂components
+ >
+ ┃ ┣ 📂layout
 >
->>> header.js
+ ┃ ┃ ┣ 📜header.js
+ >
+ ┃ ┃ ┣ 📜layout.js
 >
->>> layout.js
+ ┃ ┃ ┗ 📜scrollbtn.js
+ >
+ ┃ ┗ 📜moviebox.js
 >
->>> scrollbtn.js
+ ┣ 📂consts
+ >
+ ┃ ┗ 📜queryKey.js
 >
->> moviebox.js
+ ┣ 📂pages
+ >
+ ┃ ┣ 📂detailpage
 >
-> consts
+ ┃ ┃ ┣ 📂components
+ >
+ ┃ ┃ ┃ ┣ 📜detailmovie.js
 >
->> queryKey.js
+ ┃ ┃ ┃ ┣ 📜review.js
+ >
+ ┃ ┃ ┃ ┗ 📜similar.js
 >
-> pages
+ ┃ ┃ ┗ 📜index.js
+ >
+ ┃ ┣ 📂homepage
 >
->> detailpage
+ ┃ ┃ ┣ 📂component
+ >
+ ┃ ┃ ┃ ┣ 📜banner.js
 >
->>> components
+ ┃ ┃ ┃ ┗ 📜movielist.js
+ >
+ ┃ ┃ ┗ 📜index.js
 >
->>>> detailmovie.js
+ ┃ ┗ 📂searchpage
+ >
+ ┃ ┃ ┣ 📂component
 >
->>>> review.js
+ ┃ ┃ ┃ ┣ 📜moviebox.js
+ >
+ ┃ ┃ ┃ ┗ 📜searchmovielist.js
 >
->>>> similar.js
+ ┃ ┃ ┗ 📜index.js
+ >
+ ┣ 📂route
 >
->>> index.js
+ ┃ ┗ 📜router.js
+ >
+ ┣ 📂styles
 >
->> homepage
+ ┃ ┣ 📜common.style.js
+ >
+ ┃ ┣ 📜global.style.js
 >
->>> components
->
->>>> banner.js
->
->>>> movielist.js
->
->>> index.js
->
->> searchpage
->
->>> components
->
->>>> moviebox.js
->
->>>> searchmovielist.js
->
->>> index.js
->
-> route
->
->> router.js
->
-> styles
->> common.style.js
->
->> global.style.js
->
->> theme.style.js
+ ┃ ┗ 📜theme.style.js
+ 
 </br>
 
 # 🔎 Preview
 
-### HomePage
+### 🎥 HomePage
 https://github.com/HeesikK/Movie-Trailer/assets/127207625/a269b190-38c3-417d-b8ea-e72fef5b8998
 
-### DetailPage
+### 🎥 DetailPage
 https://github.com/HeesikK/Movie-Trailer/assets/127207625/08a88de8-0d98-48ad-9ee0-a2d4818cc450
 
-### SearchPage
+### 🎥 SearchPage
 https://github.com/HeesikK/Movie-Trailer/assets/127207625/2212bea1-14e9-4a47-882a-0304ff817a2c
 
