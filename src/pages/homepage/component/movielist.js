@@ -6,6 +6,7 @@ import { QUERY_KEY } from "../../../consts/queryKey";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import styled from "styled-components";
+import { flexCenter } from "../../../styles/common.style";
 
 const MovieList = () => {
   const param = useParams();
@@ -55,6 +56,12 @@ const MovieList = () => {
                     <MovieBox key={index} title={movie.title} overview={movie.overview} id={movie.id} poster={movie.poster_path} isFetching={isFetching} />
                   </Grid>
                 ))}
+              {isFetching &&
+                [...Array(parseInt(4))].map((n, index) => (
+                  <Grid item xs={3} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                    <Skeleton></Skeleton>
+                  </Grid>
+                ))}
             </Grid>
           );
         })}
@@ -69,4 +76,11 @@ const Type = styled.div`
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 50px;
+`;
+
+const Skeleton = styled.div`
+  background-color: gray;
+  border-radius: 5px;
+  width: 200px;
+  height: 300px;
 `;
