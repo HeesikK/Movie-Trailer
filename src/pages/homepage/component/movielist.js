@@ -32,7 +32,7 @@ const MovieList = () => {
     const scrollHeight = document.documentElement.scrollHeight;
     const scrollTop = document.documentElement.scrollTop;
     const clientHeight = document.documentElement.clientHeight;
-    if (scrollTop + clientHeight >= scrollHeight) return fetchNextPage();
+    if (scrollTop + clientHeight >= scrollHeight - 445) return fetchNextPage();
   };
 
   useEffect(() => {
@@ -57,7 +57,7 @@ const MovieList = () => {
                   </Grid>
                 ))}
               {isFetching &&
-                [...Array(parseInt(4))].map((n, index) => (
+                [...Array(parseInt(4))].map(() => (
                   <Grid item xs={3} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                     <Skeleton></Skeleton>
                   </Grid>

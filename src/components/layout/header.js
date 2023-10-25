@@ -40,7 +40,7 @@ const Header = () => {
       </S.Navbar>
       <S.InputBox>
         <S.SearchIcon src="https://cdn3.iconfinder.com/data/icons/feather-5/24/search-512.png" />
-        <S.MovieInput type="text" style={{ backgroundColor: "#c25a4a" }} onKeyPress={onSearchMovie} />
+        <S.MovieInput type="text" style={{ backgroundColor: "black" }} onKeyPress={onSearchMovie} />
       </S.InputBox>
     </S.Wrapper>
   );
@@ -52,7 +52,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
   ${flexAlignCenter};
   padding: 20px 60px 20px 60px;
-  background-color: #c25a4a;
+  background-color: black;
   z-index: 99999;
   position: fixed;
   width: 100%;
@@ -68,6 +68,8 @@ const Logo = styled.img`
   &:hover {
     cursor: pointer;
   }
+  -webkit-filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
 `;
 
 const FilterList = styled.ul`
@@ -75,10 +77,10 @@ const FilterList = styled.ul`
   > li {
     color: ${({ theme }) => theme.COLORS.white};
     font-weight: bold;
-    padding: 15px;
+    padding: 30px 75px 30px 75px;
     cursor: pointer;
     &:hover {
-      color: #1c2645;
+      color: red;
     }
   }
 `;
