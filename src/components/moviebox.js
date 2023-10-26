@@ -20,7 +20,7 @@ const MovieBox = ({ title, id, poster, rate, count }) => {
           <S.Movie>
             <S.MovieTitle>{title}</S.MovieTitle>
             <S.MovieRate>
-              <div>{`⭐ ${rate}`} </div>
+              <div>{`⭐ ${Math.round(rate)}`} </div>
               <div>❤️{count}</div>
             </S.MovieRate>
           </S.Movie>
