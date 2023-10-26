@@ -14,12 +14,11 @@ const SimilarMovie = ({ id }) => {
     <Container style={{ paddingBottom: 30 }}>
       <S.SimilarList>Similar Movie</S.SimilarList>
       <Grid container spacing={2}>
-        {similarMovieList &&
-          similarMovieList.map((movie, index) => (
-            <Grid key={index} item xs={3}>
-              <MovieBox key={index} title={movie.title} overview={movie.overview} id={movie.id} poster={movie.poster_path} />
-            </Grid>
-          ))}
+        {similarMovieList?.map((movie, index) => (
+          <Grid key={index} item xs={3}>
+            <MovieBox key={index} title={movie.title} overview={movie.overview} id={movie.id} poster={movie.poster_path} />
+          </Grid>
+        ))}
       </Grid>
     </Container>
   );

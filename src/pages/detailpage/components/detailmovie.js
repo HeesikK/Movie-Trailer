@@ -17,17 +17,17 @@ const DetailMovie = () => {
 
   return (
     <S.Wrapper>
-      <YouTube videoId={video && video.key} opts={{ width: 1280, height: 720, playerVars: { autoplay: 1 } }} />
+      <YouTube videoId={video?.key} opts={{ width: 1280, height: 720, playerVars: { autoplay: 1 } }} />
       <S.MovieInfoBox>
         <S.Header>
-          <S.MovieTitle>{detailMovie && detailMovie.title}</S.MovieTitle>
-          <S.MovieRate>{`⭐ ${detailMovie && Math.round(detailMovie.vote_average)}`}</S.MovieRate>
+          <S.MovieTitle>{detailMovie?.title}</S.MovieTitle>
+          <S.MovieRate>{`⭐ ${Math.round(detailMovie?.vote_average)}`}</S.MovieRate>
         </S.Header>
       </S.MovieInfoBox>
-      <S.MovieDate>{`released ${detailMovie && detailMovie.release_date}`}</S.MovieDate>
+      <S.MovieDate>{`released ${detailMovie?.release_date}`}</S.MovieDate>
       <S.OverView>
         <S.OverViewTitle>OverView</S.OverViewTitle>
-        <S.OverViewContent>{detailMovie && detailMovie.overview}</S.OverViewContent>
+        <S.OverViewContent>{detailMovie?.overview}</S.OverViewContent>
       </S.OverView>
       <Review id={id} />
       <SimilarMovie id={id} />

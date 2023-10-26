@@ -12,7 +12,7 @@ const MovieList = () => {
   const param = useParams();
   const { ref, inView } = useInView();
 
-  let paramKeyword = param.movie === undefined ? "popular" : param.movie;
+  let paramKeyword = !param.movie ? "popular" : param.movie;
 
   const { data, fetchNextPage, isFetching } = useInfiniteQuery({
     queryKey: [QUERY_KEY.paramKeyword, paramKeyword],
@@ -33,27 +33,25 @@ const MovieList = () => {
   return (
     <Container>
       <Type>{param.movie === undefined ? "Recommended content" : param.movie.toUpperCase()}</Type>
-      {data &&
-        data.pages.map((page, index) => {
-          const movieList = page.results;
-          return (
-            <Grid key={index} container spacing={2} style={{ paddingBottom: 20 }}>
-              {movieList &&
-                movieList.map((movie, index) => (
-                  <Grid key={index} item xs={3}>
-                    <MovieBox key={index} title={movie.title} overview={movie.overview} id={movie.id} poster={movie.poster_path} isFetching={isFetching} />
-                  </Grid>
-                ))}
-              <div ref={ref}></div>
-              {isFetching &&
-                [...Array(parseInt(4))].map(() => (
-                  <Grid item xs={3} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                    <Skeleton></Skeleton>
-                  </Grid>
-                ))}
-            </Grid>
-          );
-        })}
+      {data?.pages.map((page, index) => {
+        const movieList = page.results;
+        return (
+          <Grid key={index} container spacing={2} style={{ paddingBottom: 20 }}>
+            {movieList.map((movie, index) => (
+              <Grid key={index} item xs={3}>
+                <MovieBox key={index} title={movie.title} overview={movie.overview} id={movie.id} poster={movie.poster_path} isFetching={isFetching} />
+              </Grid>
+            ))}
+            <div ref={ref}></div>
+            {isFetching &&
+              [...Array(parseInt(4))].map(() => (
+                <Grid item xs={3} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                  <Skeleton></Skeleton>
+                </Grid>
+              ))}
+          </Grid>
+        );
+      })}
     </Container>
   );
 };
