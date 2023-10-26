@@ -30,23 +30,23 @@
 
 # 🔎 Preview
 
-### 🎥 HomePage
-https://github.com/HeesikK/Movie-Trailer/assets/127207625/a269b190-38c3-417d-b8ea-e72fef5b8998
+### 🎬 HomePage
+https://github.com/HeesikK/Movie-Trailer/assets/127207625/896b6f54-19fb-4102-99d1-c640253b3755
 
 </br>
 
-### 🎥 DetailPage
-https://github.com/HeesikK/Movie-Trailer/assets/127207625/08a88de8-0d98-48ad-9ee0-a2d4818cc450
+### 🎬 DetailPage
+https://github.com/HeesikK/Movie-Trailer/assets/127207625/0bdf755a-3657-46ac-9e31-d835878e48ad
 
 </br>
 
-### 🎥 SearchPage
-https://github.com/HeesikK/Movie-Trailer/assets/127207625/2212bea1-14e9-4a47-882a-0304ff817a2c
+### 🎬 SearchPage
+https://github.com/HeesikK/Movie-Trailer/assets/127207625/cb7c85ab-cb4c-4e1c-a1b3-6ad903868295
 
 </br>
 
 # 📆 Develop Date 
-### 2023.10.16 ~ 2023.10.23
+### Develop: 2023.10.16 ~ 2023.10.23
 
 | Date | Content |
 | ------------ | ------------- |
@@ -60,6 +60,53 @@ https://github.com/HeesikK/Movie-Trailer/assets/127207625/2212bea1-14e9-4a47-882
 | 10/23 | README.md 작성  |
 </br>
 
+### Refactor: 2023.10.25 ~ 2023.10.26
+#### 💡 리팩토링 내용
++ Skeleton UI 수정 </br>
+	+ 초기 스켈레톤 UI는 isFetching 값이 true이면 스켈레톤 UI를 보여주는 형식으로 제작하였으나 이 경우에 데이터가 fetching 될 때 모든 데이터가 스켈레톤 UI를 랜더하는 문제가 발생하였다. </br>
+	+ 이 문제를 개선하기 스켈레톤 UI를 따로 제작하여 기존 데이터 아래 추가함으로써 isFetching 이 true 일때만 보이도록 수정하였다. </br>
+ ```javascript
+{isFetching && [...Array(parseInt(4))].map(() => (
+                <Grid item xs={3} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                  <Skeleton></Skeleton>
+                </Grid>
+              ))}
+
+const Skeleton = styled.div`
+  background-color: gray;
+  border-radius: 5px;
+  width: 200px;
+  height: 300px;
+`;
+```
++ Infinity Scroll 수정
+	+ addEventListener()의 scroll 이벤트를 이용해서 무한 스크롤 구현하였지만 reflow 등 성능 문제가 발생할 수 있다는 것을 알게 되었고, react-intersection-observer 을 사용하여 수정
+   	+ react-intersection-observer 에서 제공하는 useInView 훅은 ref, inView를 Boolean 값으로 받아올 수 있다. 이때 ref는 element를 가리키고 inView는 ref가 가리키는 element가 화면에 랜더되면 true를 반환하여 fetchNext()를 통해 다음 페이지의 데이터를 fetching 할 수 있다.
+ ```javascript
+const { ref, inView } = useInView();
+
+useEffect(() => {
+    if (inView) {
+      fetchNextPage();
+    }
+  }, [inView]);
+
+return (
+...
+...
+
+<div ref={ref}></div>
+)
+```
++ Slide Banner 다시 제작
+	+ 기존 Banner는 state를 통해 슬라이드 아이콘(<, >)을 클릭하면 배열의 index를 +1 혹은 -1 하여 다음 영화를 보여줄 수 있는 형태로 제작하였다.
+   	+ 하지만 이는 비효율적이라고 생각하여 Swiper 라이브러리를 사용하여 자동 슬라이드 및 페이지네이션이 가능한 슬라이드로 변경하였음.
+
++ 디자인 보완 및 불필요한 코드 수정
+	+ 중복으로 사용되거나 불필요한 코드 삭제 및 수정
+ 	+ css 수정 및 사용되지 않는 theme 삭제
+ 
+ 
 # 🤙 Github Commit Convention
 
 | Mark | Content |
@@ -69,6 +116,7 @@ https://github.com/HeesikK/Movie-Trailer/assets/127207625/2212bea1-14e9-4a47-882
 | style | css 수정, 코드 변경이 없는 경우  |
 | remove | 폴더 삭제  |
 | docs | 문서 수정  |
+| refactor | 코드 리팩토링  |
 </br>
 
 # 📁 Folder Structure
