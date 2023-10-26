@@ -32,14 +32,14 @@ const MovieList = () => {
 
   return (
     <Container>
-      <Type>{param.movie === undefined ? "Recommended content" : param.movie.toUpperCase()}</Type>
+      <Type>{!param.movie ? "Recommended content" : param.movie.toUpperCase()}</Type>
       {data?.pages.map((page, index) => {
         const movieList = page.results;
         return (
           <Grid key={index} container spacing={2} style={{ paddingBottom: 20 }}>
             {movieList.map((movie, index) => (
               <Grid key={index} item xs={3}>
-                <MovieBox key={index} title={movie.title} overview={movie.overview} id={movie.id} poster={movie.poster_path} isFetching={isFetching} />
+                <MovieBox key={index} title={movie.title} id={movie.id} poster={movie.poster_path} rate={movie.vote_average} count={movie.vote_count} isFetching={isFetching} />
               </Grid>
             ))}
             <div ref={ref}></div>

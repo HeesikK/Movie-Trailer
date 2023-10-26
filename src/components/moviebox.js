@@ -3,7 +3,7 @@ import { flexCenter } from "../styles/common.style";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const MovieBox = ({ title, overview, id, poster }) => {
+const MovieBox = ({ title, id, poster, rate, count }) => {
   const img_url = `https://image.tmdb.org/t/p/original${poster}`;
   const [isShow, setIsShow] = useState(false);
 
@@ -19,7 +19,10 @@ const MovieBox = ({ title, overview, id, poster }) => {
         {isShow && (
           <S.Movie>
             <S.MovieTitle>{title}</S.MovieTitle>
-            <S.MovieOverView>{overview}</S.MovieOverView>
+            <S.MovieRate>
+              <div>{`⭐ ${rate}`} </div>
+              <div>❤️{count}</div>
+            </S.MovieRate>
           </S.Movie>
         )}
       </S.MovieContainer>
@@ -51,7 +54,6 @@ const MovieContainer = styled.div`
   position: relative;
   &:hover {
     cursor: pointer;
-    filter: drop-shadow(10px 10px 10px black);
     transform: scale(1.05);
     transition: 1s;
   }
@@ -59,7 +61,7 @@ const MovieContainer = styled.div`
 
 const MovieTitle = styled.div`
   font-weight: bold;
-  font-size: 19.5px;
+  font-size: 21px;
   width: 185px;
   height: 65px;
   padding-top: 20px;
@@ -68,16 +70,15 @@ const MovieTitle = styled.div`
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 `;
 
-const MovieOverView = styled.div`
-  line-height: 1.4;
-  padding-top: 50px;
-  color: white;
-  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
-  display: -webkit-box;
-  -webkit-line-clamp: 6;
-  -webkit-box-orient: vertical;
-  word-wrap: break-word;
-  overflow: hidden;
+const MovieRate = styled.div`
+  padding-top: 180px;
+  padding-right: 20px;
+  display: flex;
+  justify-content: space-between;
+  > div {
+    color: white;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+  }
 `;
 
 const S = {
@@ -85,5 +86,5 @@ const S = {
   Movie,
   MovieContainer,
   MovieTitle,
-  MovieOverView,
+  MovieRate,
 };
