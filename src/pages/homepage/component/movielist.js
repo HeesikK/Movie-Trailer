@@ -6,10 +6,11 @@ import { QUERY_KEY } from "../../../consts/queryKey";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import styled from "styled-components";
-import { flexCenter } from "../../../styles/common.style";
+import { useInView } from "react-intersection-observer";
 
 const MovieList = () => {
   const param = useParams();
+  const { ref, inView } = useInView();
 
   let paramKeyword = param.movie === undefined ? "popular" : param.movie;
 
@@ -23,24 +24,11 @@ const MovieList = () => {
     },
   });
 
-  /*  
-      height가 445일때 scrollBottom으로 인식하고 무한스크롤?
-      스크롤 이벤트 참조 블로그  
-      https://velog.io/@leejpsd/React-%EC%8A%A4%ED%81%AC%EB%A1%A4%EC%9D%B4%EB%B2%A4%ED%8A%B8%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%AC%B4%ED%95%9C%EC%8A%A4%ED%81%AC%EB%A1%A4
-  */
-  const handleScroll = () => {
-    const scrollHeight = document.documentElement.scrollHeight;
-    const scrollTop = document.documentElement.scrollTop;
-    const clientHeight = document.documentElement.clientHeight;
-    if (scrollTop + clientHeight >= scrollHeight) return fetchNextPage();
-  };
-
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [handleScroll]);
+    if (inView) {
+      fetchNextPage();
+    }
+  }, [inView]);
 
   return (
     <Container>
@@ -56,6 +44,7 @@ const MovieList = () => {
                     <MovieBox key={index} title={movie.title} overview={movie.overview} id={movie.id} poster={movie.poster_path} isFetching={isFetching} />
                   </Grid>
                 ))}
+              <div ref={ref}></div>
               {isFetching &&
                 [...Array(parseInt(4))].map(() => (
                   <Grid item xs={3} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>

@@ -54,23 +54,26 @@ const Title = styled.div`
   font-weight: bold;
   position: absolute;
   left: 80px;
-  top: 160px;
+  top: 150px;
   width: 800px;
+  z-index: 99999;
 `;
 
 const OverView = styled.div`
   position: absolute;
   left: 80px;
-  top: 260px;
+  top: 250px;
   line-height: 1.2;
   color: white;
   line-height: 1.6;
   font-size: 18px;
   text-shadow: -1px 0px black, 0px 1px black, 1px 0px black, 0px -1px black;
   width: 900px;
+  z-index: 99999;
 `;
 
 const Backdrop_Poster = styled.img`
   width: 100%;
   height: 520px;
+  opacity: 0.5;
 `;
