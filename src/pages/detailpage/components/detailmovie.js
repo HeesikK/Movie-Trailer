@@ -58,14 +58,14 @@ const Header = styled.div`
 const MovieTitle = styled.div`
   font-size: 48px;
   font-weight: bold;
-  color: white;
+  color: ${({ theme }) => theme.COLORS.white};
   width: 640px;
   line-height: 1.2;
 `;
 
 const MovieRate = styled.div`
   font-size: 24px;
-  color: white;
+  color: ${({ theme }) => theme.COLORS.white};
   font-weight: bold;
 `;
 
@@ -75,7 +75,7 @@ const MovieDate = styled.div`
   justify-content: flex-end;
   padding-top: 25px;
   font-size: 25px;
-  color: white;
+  color: ${({ theme }) => theme.COLORS.white};
   opacity: 0.5;
 `;
 
@@ -86,14 +86,14 @@ const OverView = styled.div`
 
 const OverViewTitle = styled.div`
   padding-bottom: 25px;
-  color: white;
+  color: ${({ theme }) => theme.COLORS.white};
   font-size: 28px;
   font-weight: bold;
 `;
 
 const OverViewContent = styled.div`
   font-size: 17px;
-  color: white;
+  color: ${({ theme }) => theme.COLORS.white};
   line-height: 1.5;
 `;
 

@@ -64,7 +64,7 @@ const OverView = styled.div`
   left: 80px;
   top: 250px;
   line-height: 1.2;
-  color: white;
+  color: ${({ theme }) => theme.COLORS.white};
   line-height: 1.6;
   font-size: 18px;
   text-shadow: -1px 0px black, 0px 1px black, 1px 0px black, 0px -1px black;

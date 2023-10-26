@@ -16,7 +16,7 @@ const SimilarMovie = ({ id }) => {
       <Grid container spacing={2}>
         {similarMovieList?.map((movie, index) => (
           <Grid key={index} item xs={3}>
-            <MovieBox key={index} title={movie.title} rate={movie.vote_average} count={movie.vote_count} id={movie.id} poster={movie.poster_path} />
+            <MovieBox key={index} title={movie.title} rate={movie.vote_average} id={movie.id} overview={movie.overview} poster={movie.poster_path} />
           </Grid>
         ))}
       </Grid>
@@ -28,7 +28,7 @@ export default SimilarMovie;
 
 const SimilarList = styled.div`
   padding: 30px 0 60px 0;
-  color: white;
+  color: ${({ theme }) => theme.COLORS.white};
   font-size: 28px;
   font-weight: bold;
 `;

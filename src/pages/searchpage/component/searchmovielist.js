@@ -35,7 +35,7 @@ const Wrapper = styled.div`
 const SearchResult = styled.div`
   ${flexCenter}
   padding: 30px 0 50px 0;
-  color: white;
+  color: ${({ theme }) => theme.COLORS.white};
   font-size: 28px;
   font-weight: bold;
 `;

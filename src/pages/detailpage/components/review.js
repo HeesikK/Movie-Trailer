@@ -42,7 +42,7 @@ export default Review;
 
 const ReviewTitle = styled.div`
   font-size: 28px;
-  color: white;
+  color: ${({ theme }) => theme.COLORS.white};
   padding: 50px 0 50px 0;
 `;
 
@@ -50,7 +50,7 @@ const ReviewContainer = styled.div`
   width: 1280px;
   padding: 20px;
   margin-bottom: 25px;
-  border: 1px solid white;
+  border: 1px solid ${({ theme }) => theme.COLORS.white};
   border-radius: 8px;
 `;
 
@@ -61,20 +61,20 @@ const AuthorBox = styled.div`
 `;
 
 const ReviewAuthor = styled.div`
-  color: white;
+  color: ${({ theme }) => theme.COLORS.white};
   font-size: 20px;
   font-weight: bold;
 `;
 
 const ReviewDate = styled.div`
-  color: white;
+  color: ${({ theme }) => theme.COLORS.white};
   opacity: 0.5;
   font-size: 14px;
 `;
 
 const ReviewContent = styled.div`
   line-height: 1.3;
-  color: white;
+  color: ${({ theme }) => theme.COLORS.white};
   font-size: 16px;
 `;
 

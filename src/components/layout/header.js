@@ -52,7 +52,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
   ${flexAlignCenter};
   padding: 20px 60px 20px 60px;
-  background-color: black;
+  background-color: ${({ theme }) => theme.COLORS.black};
   z-index: 99999;
   position: fixed;
   width: 100%;
@@ -99,9 +99,9 @@ const SearchIcon = styled.img`
 
 const MovieInput = styled.input`
   padding: 10px 10px 10px 30px;
-  color: white;
+  color: ${({ theme }) => theme.COLORS.white};
   border: none;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid ${({ theme }) => theme.COLORS.white};
   background-color: black;
   &:focus {
     outline: none;

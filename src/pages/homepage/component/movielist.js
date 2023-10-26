@@ -39,7 +39,7 @@ const MovieList = () => {
           <Grid key={index} container spacing={2} style={{ paddingBottom: 20 }}>
             {movieList.map((movie, index) => (
               <Grid key={index} item xs={3}>
-                <MovieBox key={index} title={movie.title} id={movie.id} poster={movie.poster_path} rate={movie.vote_average} count={movie.vote_count} isFetching={isFetching} />
+                <MovieBox key={index} title={movie.title} id={movie.id} poster={movie.poster_path} rate={movie.vote_average} overview={movie.overview} isFetching={isFetching} />
               </Grid>
             ))}
             <div ref={ref}></div>
@@ -59,7 +59,7 @@ const MovieList = () => {
 export default MovieList;
 
 const Type = styled.div`
-  color: white;
+  color: ${({ theme }) => theme.COLORS.white};
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 50px;

@@ -1,4 +1,3 @@
-import { Container } from "@mui/material";
 import { flexCenter } from "../../../styles/common.style";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
@@ -32,7 +31,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   margin-bottom: 50px;
   position: relative;
-  background-color: black;
+  background-color: ${({ theme }) => theme.COLORS.black};
   width: 1000px;
 `;
 
@@ -59,7 +58,7 @@ const Title = styled.div`
   position: absolute;
   top: 80px;
   left: 325px;
-  color: white;
+  color: ${({ theme }) => theme.COLORS.white};
   font-weight: bold;
   font-size: 28px;
   width: 400px;
@@ -71,7 +70,7 @@ const OverView = styled.div`
   left: 325px;
   top: 175px;
   line-height: 1.5;
-  color: white;
+  color: ${({ theme }) => theme.COLORS.white};
   display: -webkit-box;
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
@@ -83,7 +82,7 @@ const Date = styled.div`
   position: absolute;
   top: 365px;
   left: 325px;
-  color: white;
+  color: ${({ theme }) => theme.COLORS.white};
   opacity: 0.7;
   font-size: 12px;
 `;
