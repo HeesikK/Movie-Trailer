@@ -40,7 +40,7 @@ const SearchResult = styled.div`
   font-weight: bold;
 
   @media ${({ theme }) => theme.DEVICE.mobile} {
-    font-size: 20px;
+    font-size: 14px;
   }
 `;
 

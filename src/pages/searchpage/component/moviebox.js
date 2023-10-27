@@ -33,6 +33,11 @@ const Wrapper = styled.div`
   position: relative;
   background-color: ${({ theme }) => theme.COLORS.black};
   width: 1000px;
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    ${flexCenter}
+    width: 100%;
+  }
 `;
 
 const BackDrop_Poster = styled.img`
@@ -40,8 +45,8 @@ const BackDrop_Poster = styled.img`
   height: 450px;
   opacity: 0.4;
   @media ${({ theme }) => theme.DEVICE.mobile} {
-    width: 400px;
-    height: 180px;
+    width: 200px;
+    height: 90px;
   }
 `;
 
@@ -58,9 +63,9 @@ const Poster = styled.img`
   }
   @media ${({ theme }) => theme.DEVICE.mobile} {
     position: absolute;
-    width: 80px;
-    left: 330px;
-    top: 30px;
+    width: 40px;
+    left: 160px;
+    top: 15px;
   }
 `;
 
@@ -75,12 +80,13 @@ const Title = styled.div`
 
   @media ${({ theme }) => theme.DEVICE.mobile} {
     position: absolute;
-    font-size: 14px;
-    top: 30px;
-    left: 430px;
-    width: 200px;
+    font-size: 12px;
+    top: 28px;
+    left: 210px;
+    width: 100px;
     display: -webkit-box;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
+    line-height: 1.3;
     -webkit-box-orient: vertical;
     word-wrap: break-word;
     overflow: hidden;
@@ -101,16 +107,7 @@ const OverView = styled.div`
   overflow: hidden;
 
   @media ${({ theme }) => theme.DEVICE.mobile} {
-    position: absolute;
-    font-size: 12px;
-    top: 70px;
-    width: 220px;
-    left: 430px;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    word-wrap: break-word;
-    overflow: hidden;
+    display: none;
   }
 `;
 
@@ -123,10 +120,7 @@ const Date = styled.div`
   font-size: 12px;
 
   @media ${({ theme }) => theme.DEVICE.mobile} {
-    position: absolute;
-    font-size: 8px;
-    top: 140px;
-    left: 430px;
+    display: none;
   }
 `;
 
