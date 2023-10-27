@@ -64,7 +64,7 @@ const Poster = styled.img`
   @media ${({ theme }) => theme.DEVICE.mobile} {
     position: absolute;
     width: 40px;
-    left: 160px;
+    left: 150px;
     top: 15px;
   }
 `;
@@ -80,8 +80,8 @@ const Title = styled.div`
 
   @media ${({ theme }) => theme.DEVICE.mobile} {
     position: absolute;
-    font-size: 12px;
-    top: 28px;
+    font-size: 10px;
+    top: 30px;
     left: 210px;
     width: 100px;
     display: -webkit-box;
