@@ -59,8 +59,11 @@ const Title = styled.div`
   z-index: 99999;
 
   @media ${({ theme }) => theme.DEVICE.mobile} {
+    position: absolute;
+    top: 170px;
     display: -webkit-box;
-    width: 300px;
+    width: 200px;
+    font-size: 25px;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     word-wrap: break-word;
@@ -80,8 +83,11 @@ const OverView = styled.div`
   width: 900px;
   z-index: 99999;
   @media ${({ theme }) => theme.DEVICE.mobile} {
+    position: absolute;
+    top: 240px;
+    font-size: 12px;
     display: -webkit-box;
-    width: 300px;
+    width: 200px;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     word-wrap: break-word;

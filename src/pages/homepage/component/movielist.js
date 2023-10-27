@@ -36,16 +36,16 @@ const MovieList = () => {
       {data?.pages.map((page, index) => {
         const movieList = page.results;
         return (
-          <Grid key={index} container spacing={{ xs: 2 }} style={{ paddingBottom: 20 }}>
+          <Grid key={index} container spacing={{ xs: 1, md: 2 }} style={{ paddingBottom: 20 }}>
             {movieList.map((movie, index) => (
-              <Grid key={index} item xs={3}>
+              <Grid key={index} item xs={6} md={3}>
                 <MovieBox key={index} title={movie.title} id={movie.id} poster={movie.poster_path} rate={movie.vote_average} overview={movie.overview} isFetching={isFetching} />
               </Grid>
             ))}
             <div ref={ref}></div>
             {isFetching &&
               [...Array(parseInt(4))].map(() => (
-                <Grid item xs={3} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                <Grid item xs={6} md={3} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                   <Skeleton></Skeleton>
                 </Grid>
               ))}

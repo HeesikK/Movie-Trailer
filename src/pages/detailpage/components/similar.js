@@ -15,7 +15,7 @@ const SimilarMovie = ({ id }) => {
       <S.SimilarList>Similar Movie</S.SimilarList>
       <Grid container spacing={2}>
         {similarMovieList?.map((movie, index) => (
-          <Grid key={index} item xs={3}>
+          <Grid key={index} item xs={6} md={3}>
             <MovieBox key={index} title={movie.title} rate={movie.vote_average} id={movie.id} overview={movie.overview} poster={movie.poster_path} />
           </Grid>
         ))}

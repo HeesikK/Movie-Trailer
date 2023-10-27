@@ -64,7 +64,7 @@ const Poster = styled.img`
   @media ${({ theme }) => theme.DEVICE.mobile} {
     position: absolute;
     width: 40px;
-    left: 150px;
+    left: 110px;
     top: 15px;
   }
 `;
@@ -81,11 +81,11 @@ const Title = styled.div`
   @media ${({ theme }) => theme.DEVICE.mobile} {
     position: absolute;
     font-size: 10px;
-    top: 30px;
-    left: 210px;
+    top: 15px;
+    left: 170px;
     width: 100px;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     line-height: 1.3;
     -webkit-box-orient: vertical;
     word-wrap: break-word;
@@ -107,7 +107,17 @@ const OverView = styled.div`
   overflow: hidden;
 
   @media ${({ theme }) => theme.DEVICE.mobile} {
-    display: none;
+    position: absolute;
+    font-size: 7px;
+    left: 170px;
+    top: 35px;
+    z-index: 99999;
+    display: -webkit-box;
+    width: 100px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    overflow: hidden;
   }
 `;
 
