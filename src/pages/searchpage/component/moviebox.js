@@ -39,6 +39,10 @@ const BackDrop_Poster = styled.img`
   width: 1000px;
   height: 450px;
   opacity: 0.4;
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    width: 400px;
+    height: 180px;
+  }
 `;
 
 const Poster = styled.img`
@@ -52,6 +56,12 @@ const Poster = styled.img`
     transform: scale(1.05);
     transition: all 0.2s linear;
   }
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    position: absolute;
+    width: 80px;
+    left: 330px;
+    top: 30px;
+  }
 `;
 
 const Title = styled.div`
@@ -62,6 +72,19 @@ const Title = styled.div`
   font-weight: bold;
   font-size: 28px;
   width: 400px;
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    position: absolute;
+    font-size: 14px;
+    top: 30px;
+    left: 430px;
+    width: 200px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    overflow: hidden;
+  }
 `;
 
 const OverView = styled.div`
@@ -76,6 +99,19 @@ const OverView = styled.div`
   -webkit-box-orient: vertical;
   word-wrap: break-word;
   overflow: hidden;
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    position: absolute;
+    font-size: 12px;
+    top: 70px;
+    width: 220px;
+    left: 430px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    overflow: hidden;
+  }
 `;
 
 const Date = styled.div`
@@ -85,6 +121,13 @@ const Date = styled.div`
   color: ${({ theme }) => theme.COLORS.white};
   opacity: 0.7;
   font-size: 12px;
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    position: absolute;
+    font-size: 8px;
+    top: 140px;
+    left: 430px;
+  }
 `;
 
 const S = {

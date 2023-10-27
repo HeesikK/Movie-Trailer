@@ -57,6 +57,15 @@ const Title = styled.div`
   top: 150px;
   width: 800px;
   z-index: 99999;
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    display: -webkit-box;
+    width: 300px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    overflow: hidden;
+  }
 `;
 
 const OverView = styled.div`
@@ -70,6 +79,14 @@ const OverView = styled.div`
   text-shadow: -1px 0px black, 0px 1px black, 1px 0px black, 0px -1px black;
   width: 900px;
   z-index: 99999;
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    display: -webkit-box;
+    width: 300px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    overflow: hidden;
+  }
 `;
 
 const Backdrop_Poster = styled.img`

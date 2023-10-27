@@ -38,6 +38,10 @@ const SearchResult = styled.div`
   color: ${({ theme }) => theme.COLORS.white};
   font-size: 28px;
   font-weight: bold;
+
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    font-size: 20px;
+  }
 `;
 
 const S = {

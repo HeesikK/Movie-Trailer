@@ -73,6 +73,11 @@ const Logo = styled.img`
 `;
 
 const FilterList = styled.ul`
+  @media ${({ theme }) => theme.DEVICE.mobile} {
+    & > li {
+      display: none;
+    }
+  }
   ${flexCenter}
   > li {
     color: ${({ theme }) => theme.COLORS.white};
